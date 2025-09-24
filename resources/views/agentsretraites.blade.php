@@ -371,9 +371,9 @@
                                     <td class="px-3 py-3 whitespace-nowrap text-sm text-gray-900">
                                         {{ $agent->prenom_Agent }}</td>
                                     <td class="px-3 py-3 text-sm text-left text-green-600"><span
-                                            class="inline break-word">{{ $agent->poste->libelle_poste }}</span></td>
+                                            class="inline break-word">{{ $agent->poste ? $agent->poste->libelle_poste : 'Aucun poste' }}</span></td>
                                     <td class="px-3 py-3 text-sm text-left text-green-600"><span
-                                            class="inline break-word">{{ <p
+                                            class="inline break-word"> <p
                                                     class="">
                                                     Catégorie <span
                                                         class="font-semibold text-blue-600">{{ $agent->categorie }}</span>,
@@ -381,7 +381,7 @@
                                                         class="font-semibold text-green-600">{{ $agent->classe }}</span>,
                                                     Échelon <span
                                                         class="font-semibold text-purple-600">{{ $agent->echelon }}</span>
-                                                </p> }}</span></td>
+                                                </p> </span></td>
                                     <td class="px-3 py-3 text-sm text-left text-green-600"><span
                                             class="inline break-word">{{ \Carbon\Carbon::parse($agent->date_depart_retraite)->format('d/m/Y') }}
                                         </span></td>

@@ -43,13 +43,13 @@
         $dateReprise = $dateFin->addDay();
     @endphp
     <p style="text-align: right; margin-right: 5rem;">Cotonou, {{ $date->translatedFormat('d F Y') }}</p>
-    <p style="font-weight: bold; margin-top: 1.25rem;">N° /MCOT/SE/DAAF/SRH/DGC</p>
+    <p style="font-weight: bold; margin-top: 1.25rem;">N°&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /MCOT/SE/DAAF/SRH/DGC</p>
     <h1
         style="text-transform: uppercase; text-decoration: underline; text-align:center; font-size: 1rem; font-weight: bold; margin-top: 2.5rem; margin-bottom: 2.5rem;">
         Autorisation de jouissance des congés administratifs</h1>
     <p style="text-indent: 2em; line-height: 2; text-align:justify">Le sécrétaire Exécutif de la mairie de Cotonou
         autorise monsieur {{ $agent->nom_Agent }} {{ $agent->prenom_Agent }}, en poste de la mairie de Cotonou,
-        bénéficiaire du titre de congés administratifs n° du , à jouir de ses congés administratifs pour une duréz <span
+        bénéficiaire du titre de congés administratifs n°&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; du&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; , à jouir de ses congés administratifs pour une duréz <span
             style="font-weight: bold;">d'un (01) mois, soit trente (30) jours consécutifs</span> au titre de l'année </p>
     <p style="margin-top: 2.5rem;"><span style="text-transform:uppercase; font-weight:bold;">Date de depart :</span>  {{$congeAnnuel ? $dateDebut->translatedFormat('d F Y') : 'Non défini'}}</p>
     <p><span style="text-transform:uppercase; font-weight:bold;">Date d'expiration : </span>{{$congeAnnuel ? $dateFin->translatedFormat('d F Y') : 'Non défini'}}</p>

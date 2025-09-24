@@ -494,7 +494,7 @@
                             </div>
                             <div class="w-full py-2">
                                 <label for="poste_id" class="block text-sm font-medium text-gray-700">Poste</label>
-                                <select name="poste_id" id="poste_id" required
+                                <select name="poste_id" id="poste_id" 
                                     class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 text-gray-700 text-sm">
                                     <option value="">-- Choisir un poste --</option>
                                     @foreach ($postes as $poste)

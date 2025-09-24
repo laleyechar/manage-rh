@@ -320,7 +320,7 @@
             </svg>
         </button>
         <div id="ouverture"
-            class="hidden absolute top-17 left-14 mt-10 w-48 bg-white border border-gray-100 rounded-md shadow-lg z-50">
+            class="hidden absolute top-17 left-14 mt-10 w-60 bg-white border border-gray-100 rounded-md shadow-lg z-50">
             <a href="{{ route('agent.pdf', $employe->id) }}"
                 class="flex space-x-2 block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">
                 <h2>Telecharger le pdf</h2>
@@ -334,6 +334,50 @@
             <button type="submit" id="btnsanction"
                 class="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Ajouter
                 sanction</button>
+            <div id="liste_annees">
+                <button class="flex w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">
+                    Attestation de non jouissance
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div id="over" class="fixed inset-0 bg-gray-600 opacity-50 hidden"></div>
+        <div id="nonjouissance" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4">
+            <form action="{{ route('attestation.nonjouissance.pdf', $employe->id) }}"
+                class="relative bg-white rounded-lg p-10 max-h-[80vh] max-w-full w-full sm:w-[30em] lg:w-[40em] justify-self-center items-center overflow-auto"
+                method="POST">
+                <button type="button" id="fermerformulaire"
+                    class="absolute top-2 right-2 text-red-500 hover:text-gray-800 text-xl font-bold">
+                    &times;
+                </button>
+                <h2 class=" text-center text-xl font-bold mb-4">Attestation de non-jouissance</h2>
+
+                @csrf
+                <p class="mb-2">Cochez les années où l’agent n’a pas bénéficié de congé annuel :</p>
+
+                <div class="mb-4">
+                    @foreach ($anneenonjouissance as $annee)
+                        <div>
+                            <input type="checkbox" name="annees[]" value="{{ $annee }}"
+                                id="annee_{{ $annee }}">
+                            <label for="annee_{{ $annee }}">{{ $annee }}</label>
+                        </div>
+                    @endforeach
+                    <div>
+                        <label for="Date_debut" class="block text-sm font-medium text-gray-700">Date</label>
+                        <input type="date" name="Date_debut" id="Date_debut"
+                            class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 " required>
+                    </div>
+                </div>
+
+                <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded">
+                    Générer le PDF
+                </button>
+            </form>
         </div>
         <div id="overlay_sanction" class="fixed inset-0 bg-gray-600 opacity-50 hidden z-40"></div>
         <div class="hidden bg-white fixed pl-5 pr-5 pt-2 inset-50 z-50 w-xl overflow-y-auto justify-self-center items-center rounded-lg"
@@ -665,6 +709,21 @@
 
 
 <script>
+    const over = document.getElementById('over')
+    const liste_annees = document.getElementById('liste_annees')
+    const nonjouissance = document.getElementById('nonjouissance')
+    const fermerformulaire = document.getElementById('fermerformulaire')
+
+    liste_annees.addEventListener("click", () => {
+        event.preventDefault()
+        nonjouissance.classList.remove('hidden')
+        over.classList.remove('hidden')
+    })
+    fermerformulaire.addEventListener("click", () => {
+        nonjouissance.classList.add('hidden')
+        over.classList.add('hidden')
+    })
+
     const formulaire_sanction = document.getElementById('formulaire_sanction')
     const btnsanction = document.getElementById('btnsanction')
     const overlaysanction = document.getElementById('overlay_sanction')

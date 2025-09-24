@@ -38,24 +38,47 @@
         $date = Carbon::now();
     @endphp <p style="text-align: right; margin-right: 5rem;">
         Cotonou, {{ $date->translatedFormat('d F Y') }}</p>
-    <p style="font-weight:bold; margin-top: 1.25rem">N° /MCOT/SE/DAAF/SRH/DGC</p>
+    <p style="font-weight:bold; margin-top: 1.25rem">N°&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /MCOT/SE/DAAF/SRH/DGC</p>
     <h1
         style="text-transform:uppercase; text-decoration:underline; text-align:center; font-size:1rem; font-weight:bold; margin-top: 2.5rem; margin-bottom: 2.5rem;">
         Autorisation de non jouissance des
         congés administratifs</h1>
     <p style="text-indent: 2em; line-height: 2; text-align: justify;">Le sécrétaire Exécutif de la mairie de
         Cotonou autorise monsieur {{ $agent->nom_Agent }} {{ $agent->prenom_Agent }}, en poste
-        {{ $agent->poste?->description_poste ?? 'Poste non défini' }}, bénéficiaire de l'attestation de non jouissance des congés administratifs <span
-            style="font-weight:bold;">n</span>° du relative aux titres de congés administratifs :</p>
+        {{ $agent->poste?->description_poste ?? 'Poste non défini' }}, bénéficiaire de l'attestation de non jouissance
+        des congés administratifs <span style="font-weight:bold;">n</span>° &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;du relative aux titres de congés
+        administratifs :</p>
 
-    <p style="text-indent: 2em; "><span style="font-weight:bold;">- n°</span> du et</p>
-    <p style="text-indent: 2em; "><span style="font-weight:bold;">- n°</span> du </p>
+    @foreach ($anneesChoisies as $key => $annee)
+        <p style="text-indent: 2em;">
+            <span style="font-weight:bold;">- n°&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> du
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ $annee }}
+            @if ( $key < count($anneesChoisies) - 1 )
+                 et
+            @endif
+        </p>
+    @endforeach
 
-    <p style="line-height: 2; text-align:justify">à jouir de ses congés administratifs pour une durée de deux (02)
-        mois, soit soxante (60) jours consécutifs aux titres des années 2014 et 2015</p>
-    <p style="margin-top:2.5rem; text-transform:uppercase; font-weight:bold; font-size: 1rem;">Date de depart : </p> {{$congeAnnuel ? $congeAnnuel->Date_debut->translatedFormat('d F Y') : 'Non défini'}}
-    <p style="text-transform:uppercase; font-weight:bold; font-size: 1rem;">Date d'expiration : </p> {{$congeAnnuel ? $congeAnnuel->Date_fin->translatedFormat('d F Y') : 'Non défini'}}
-    <p style="text-transform:uppercase; font-weight:bold; font-size: 1rem;">Date de reprise de service :</p>
+    <p style="line-height: 2; text-align:justify">à jouir de ses congés administratifs pour une durée de
+        ({{ count($anneesChoisies) }})
+        mois, soit {{ $dureeTotale }} jours consécutifs aux titres des années @if (count($anneesChoisies) > 0)
+            @foreach ($anneesChoisies as $key => $annee)
+                @if ($key == count($anneesChoisies) - 1 && $key != 0)
+                    et {{ $annee }}
+                @elseif($key == 0)
+                    {{ $annee }}
+                @else
+                    , {{ $annee }}
+                @endif
+            @endforeach
+        @endif
+    </p>
+    <p style="margin-top:2.5rem;"> <span style="text-transform:uppercase; font-weight:bold;">Date de depart :
+        </span>{{ $dateDebut ? $dateDebut->translatedFormat('d F Y') : 'Non défini' }} </p>
+    <p><span style="text-transform:uppercase; font-weight:bold; font-size: 1rem;">Date d'expiration : </span>
+        {{ $datefin ? $datefin->translatedFormat('d F Y') : 'Non défini' }}</p>
+    <p><span style="text-transform:uppercase; font-weight:bold; font-size: 1rem;">Date de reprise de service :</span>
+        {{ $datefin->addDay(1)->translatedFormat('d F Y') }}</p>
     <div style="margin-top: 5rem;">
         <div style="float: left; text-align: left;">
             <p style="text-decoration:underline; font-weight:bold; text-transform:uppercase; font bold">Ampliations</p>

@@ -164,9 +164,10 @@ Route::middleware(['LogActivity'])->group(function () {
     Route::get('/agents/pdf', [EmployeeController::class, 'exportagent_Pdf'])->name('agents.pdf');
 
     Route::get('/Attestation_Jouissance_Conge/pdf/{id}', [EmployeeController::class, 'genererAttestation_JouissancePdf'])->name('attestation.jouissance.pdf')->middleware('auth');
-    Route::get('/preview/attestation/{id}', [EmployeeController::class, 'previewAttestation'])
-        ->name('attestation.preview')
-        ->middleware('auth');
+    Route::post('/Attestation_Non_Jouissance_Conge/pdf/{id}', [EmployeeController::class, 'genererAttestation_Non_JouissancePdf'])->name('attestation.nonjouissance.pdf')->middleware('auth');
+    // Route::get('/preview/attestation/{id}', [EmployeeController::class, 'previewAttestation'])
+    //     ->name('attestation.preview')
+    //     ->middleware('auth');
 
     Route::get('/Fichier', [FichierController::class, 'afficherFichier'])->name('afficher.fichier')->middleware('auth');
     Route::post('/Fichier', [FichierController::class, 'ajouterFichier'])->name('ajouterFichier')->middleware('auth');

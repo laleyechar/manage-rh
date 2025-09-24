@@ -30,7 +30,7 @@
                     <td>{{ $agent->matricule_Agent }}</td>
                     <td>{{ $agent->nom_Agent }}</td>
                     <td>{{ $agent->prenom_Agent }}</td>
-                    <td>{{ $agent->poste->libelle_poste }}</td>
+                    <td>{{ $agent->poste ? $agent->poste->libelle_poste : 'Aucun poste' }}</td>
                     <td><p
                                                     class="">
                                                     Catégorie <span

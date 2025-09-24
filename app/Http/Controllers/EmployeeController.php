@@ -37,12 +37,29 @@ class EmployeeController extends Controller
     public function information($id)
     {
         $employe = Agent::find($id);
+        $dateDebut = Carbon::parse($employe->date_prise_service);
+        $dateActuelle = Carbon::now();
+        $anneeTotal = collect(range($dateDebut->year, $dateActuelle->year + 1));
+
+        $anneejouissance = $employe->conges()
+            ->where('Type_conge', 'congé annuel')
+            ->where('statut_conge', 'Accordé')
+            ->pluck('Date_debut')
+            ->map(function ($date) {
+                return Carbon::parse($date)->year;
+            })
+            ->unique();
+
+        $anneenonjouissance = $anneeTotal->diff($anneejouissance)->values();
+
         $sanctions = Sanction::with('agent')->get();
+
         $agentRetraite = Agent::whereDate('date_depart_retraite', '<=', now())
             ->where('statut', '!=', 'Retraité')
             ->update(['statut' => 'Retraité']);
         return view('info', [
-            'employe' => $employe
+            'employe' => $employe,
+            'anneenonjouissance' => $anneenonjouissance,
         ]);
     }
 
@@ -328,9 +345,9 @@ class EmployeeController extends Controller
         $annee = Carbon::now()->year;
         $agent = Agent::findOrFail($id);
         $congeAnnuel = $agent->conges()
-        ->where('Type_conge', 'congé annuel')
-        ->where('statut_conge', 'Accordé')
-        ->first();
+            ->where('Type_conge', 'congé annuel')
+            ->where('statut_conge', 'Accordé')
+            ->first();
 
         if ($congeAnnuel) {
             $pdf = Pdf::loadView('attestation_jouissancepdf', compact('congeAnnuel', 'agent', 'annee'));
@@ -341,15 +358,54 @@ class EmployeeController extends Controller
         }
     }
 
-    public function previewAttestation($id)
+    // public function previewAttestation($id)
+    // {
+    //     $annee = now()->year;
+    //     $agent = Agent::findOrFail($id);
+
+    //     // Tu peux aussi simuler un congé pour tester le rendu
+    //     $congeAnnuel = $agent->conges()->where('Type_conge', 'annuel')->first();
+
+    //     // On renvoie la vue directement en HTML
+    //     return view('attestation_non_jouissancepdf', compact('agent', 'annee', 'congeAnnuel'));
+    // }
+
+    public function genererAttestation_Non_JouissancePdf(Request $request, $id)
     {
-        $annee = now()->year;
+
         $agent = Agent::findOrFail($id);
+        $anneesChoisies = $request->input('annees', []);
+        $dateDebut = Carbon::parse($request->input('Date_debut'));
+        $dateDebutInitiale = $dateDebut->copy();
+        $dureeParAnnee = 30;
+        $dureeTotale = count($anneesChoisies) * 30;
+        // $datefinFinale = Carbon::parse($dateDebut)->addDays($dureeTotale - 1);
 
-        // Tu peux aussi simuler un congé pour tester le rendu
-        $congeAnnuel = $agent->conges()->where('Type_conge', 'annuel')->first();
+        // Durée de congé par année en jours
 
-        // On renvoie la vue directement en HTML
-        return view('attestation_non_jouissancepdf', compact('agent', 'annee', 'congeAnnuel'));
+        foreach ($anneesChoisies as $annee) {
+            $datefin = $dateDebut->copy()->addDays($dureeParAnnee - 1);
+
+            $conge = Conge::create([
+                'agent_id' => $agent->id,
+                'Type_conge' => 'congé annuel',
+                'Date_debut' => $dateDebut,
+                'Date_fin' => $datefin,
+                'statut_conge' => 'Accordé'
+            ]);
+            $conge->agents()->attach($agent->id);
+            // Décaler la date de début pour la prochaine année si nécessaire
+            $dateDebut = $datefin->copy()->addDay();
+            $dernierDateFin = $datefin;
+        }
+
+        $pdf = Pdf::loadView('attestation_non_jouissancepdf', [
+            'agent' => $agent,
+            'anneesChoisies' => $anneesChoisies,
+            'dureeTotale' => $dureeTotale,
+            'dateDebut' => $dateDebutInitiale,
+            'datefin' => $dernierDateFin
+        ]);
+        return $pdf->download('attestation_non_jouissance.pdf');
     }
 }

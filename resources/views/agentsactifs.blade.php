@@ -369,7 +369,7 @@
                                     <td class="px-3 py-3 whitespace-nowrap text-sm text-gray-900">
                                         {{ $agent->prenom_Agent }}</td>
                                     <td class="px-3 py-3 text-sm text-left text-green-600"><span
-                                            class="inline break-word">{{ $agent->poste->libelle_poste }}</span></td>
+                                            class="inline break-word">{{ $agent->poste ? $agent->poste->libelle_poste : 'Aucun service' }}</span></td>
                                     <td class="px-3 py-3 text-sm text-left text-green-600"><span
                                             class="inline break-word">
                                                 <p
