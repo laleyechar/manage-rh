@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="{{ asset('images/icone[1].png') }}" />
+    <link rel="icon" type="image/png" href="<?php echo e(asset('images/icone[1].png')); ?>" />
     <title>HRManager</title>
-    @vite('resources/css/app.css')
-    @vite('resources/js/app.js')
+    <?php echo app('Illuminate\Foundation\Vite')('resources/css/app.css'); ?>
+    <?php echo app('Illuminate\Foundation\Vite')('resources/js/app.js'); ?>
     <!-- FullCalendar CSS -->
     <link href='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.css' rel='stylesheet' />
 
@@ -93,7 +93,7 @@
         <div class="h-25">
             <a class="block px-14 py-6 m-0 text-sm whitespace-nowrap dark:text-white text-slate-700" href=""
                 target="_blank">
-                <img src="{{ asset('images/logob.png') }}"
+                <img src="<?php echo e(asset('images/logob.png')); ?>"
                     class="inline max-h-15 max-w-full transition-all duration-200 ml-4 ease-nav-brand"
                     alt="main_logo"  />
             </a>
@@ -106,7 +106,7 @@
             <ul class="flex flex-col pl-0 mb-0">
                 <li class="mt-0.5 w-full ">
                     <a class=" p-2 bg-[#5e72e4]/10 dark:text-white dark:opacity-80 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap rounded-lg px-4 font-semibold text-slate-700 transition-colors"
-                        href="{{ route('site') }}">
+                        href="<?php echo e(route('site')); ?>">
                         <div
                             class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center ">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -121,7 +121,7 @@
 
                 <li class="mt-0.5 w-full">
                     <a class="p-2 dark:text-white dark:opacity-80 py-3 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
-                        href="{{ route('liste') }}">
+                        href="<?php echo e(route('liste')); ?>">
                         <div
                             class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center ">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -135,7 +135,7 @@
                 </li>
                 <li class="mt-0.5 w-full">
                     <a class="p-2 dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
-                        href="{{ route('afficher.fichier') }}">
+                        href="<?php echo e(route('afficher.fichier')); ?>">
                         <div
                             class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center ">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -151,7 +151,7 @@
                 </li>
                 <li class="mt-0.5 w-full">
                     <a class="p-2 dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
-                        href="{{ route('formations') }}">
+                        href="<?php echo e(route('formations')); ?>">
                         <div
                             class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center fill-current stroke-0 text-center ">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -166,7 +166,7 @@
 
                 <li class="mt-0.5 w-full">
                     <a class="p-2 dark:text-white dark:opacity-80 py-3 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
-                        href="{{ route('promotions') }}">
+                        href="<?php echo e(route('promotions')); ?>">
                         <div
                             class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center ">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -182,7 +182,7 @@
 
                 <li class="mt-0.5 w-full">
                     <a class="p-2 dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
-                        href="{{ route('Conges') }}">
+                        href="<?php echo e(route('Conges')); ?>">
                         <div
                             class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center ">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text--500" fill="none"
@@ -197,7 +197,7 @@
 
                 <li class="mt-0.5 w-full">
                     <a class="p-2 dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
-                        href="{{ route('Services') }}">
+                        href="<?php echo e(route('Services')); ?>">
                         <div
                             class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center ">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -213,7 +213,7 @@
                 </li>
                 <li class="mt-0.5 w-full">
                     <a class="p-2 dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors "
-                        href="{{ route('Poste') }}">
+                        href="<?php echo e(route('Poste')); ?>">
                         <div
                             class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center ">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -226,14 +226,14 @@
                             postes</span>
                     </a>
                 </li>
-                @auth
-                    @if (Auth::user()->hasRole('admin'))
+                <?php if(auth()->guard()->check()): ?>
+                    <?php if(Auth::user()->hasRole('admin')): ?>
                         <hr
                             class="border-0 h-px mx-4 bg-gradient-to-r from-gray-100 via-black/60 to-gray-200 dark:from-transparent dark:via-white dark:to-transparent" />
 
                         <li class="mt-0.5 w-full">
                             <a class="p-2 dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
-                                href="{{ route('admin.users.index') }}">
+                                href="<?php echo e(route('admin.users.index')); ?>">
                                 <div
                                     class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center ">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -249,7 +249,7 @@
                         </li>
                         <li class="mt-0.5 w-full">
                             <a class="p-2 dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
-                                href="{{ route('journal') }}">
+                                href="<?php echo e(route('journal')); ?>">
                                 <div
                                     class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center ">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -263,7 +263,7 @@
                         </li>
                         <li class="mt-0.5 w-full">
                             <a class="p-2 dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
-                                href="{{ route('agents.supprimes') }}">
+                                href="<?php echo e(route('agents.supprimes')); ?>">
                                 <div
                                     class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center ">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -276,8 +276,8 @@
                                     supprimés</span>
                             </a>
                         </li>
-                    @endif
-                @endauth
+                    <?php endif; ?>
+                <?php endif; ?>
             </ul>
         </div>
     </aside>
@@ -305,7 +305,7 @@
                 <div class="flex items-center mt-2 grow sm:mt-0 sm:mr-6 md:mr-0 lg:flex lg:basis-auto">
                     <div class="flex items-center md:ml-auto md:pr-4">
                         <div class="relative flex flex-wrap items-stretch w-full transition-all rounded-lg ease">
-                            <form action="{{ route('search') }}" method="get" class="">
+                            <form action="<?php echo e(route('search')); ?>" method="get" class="">
                                 <a href="" id="barreCentrale"
                                     class="flex border border-gray-300 bg-white rounded-lg ">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -336,13 +336,13 @@
                             <div id="userMenu"
                                 class="hidden absolute top-4 right-0 mt-10 w-48 bg-white border border-gray-100 rounded-md shadow-lg z-50">
                                 <!-- Connecté -->
-                                <a href="{{ route('afficherProfil') }}"
+                                <a href="<?php echo e(route('afficherProfil')); ?>"
                                     class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">
                                     <i class="fas fa-user mr-2"></i> Mon profil
                                 </a>
                                 <div class="border-t border-gray-100 my-1"></div>
-                                <form method="POST" action={{ route('logout') }}>
-                                    @csrf
+                                <form method="POST" action=<?php echo e(route('logout')); ?>>
+                                    <?php echo csrf_field(); ?>
                                     <button type="submit"
                                         class="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">
                                         <i class="fas fa-right-from-bracket mr-2"></i> Déconnexion
@@ -400,16 +400,16 @@
                 <ul id="resultsList" class="hover:text-gray-700"></ul>
             </div>
         </div>
-        @if ($errors->any())
+        <?php if($errors->any()): ?>
             <div class="m-5 mb-4 p-4 shadow-lg rounded-lg bg-red-100 text-red-700">
                 <strong>Erreur(s) détectée(s) :</strong>
                 <ul class="mt-2 list-disc list-inside">
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
+                    <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <li><?php echo e($error); ?></li>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </ul>
             </div>
-        @endif
+        <?php endif; ?>
         <div class="flex flex-wrap -mx-3 px-6 py-6 mx-auto">
             <!-- card1 -->
             <div class="w-full max-w-full px-3 mb-6 sm:w-1/3 sm:flex-none xl:mb-0 xl:w-1/3">
@@ -422,7 +422,7 @@
                                     <p
                                         class="mb-0 font-sans text-sm text-center font-semibold leading-normal uppercase dark:text-white dark:opacity-60">
                                         Total agents : <span
-                                            class="font-bold dark:text-white text-center text-orange-500">{{ $agents->count() }}</span>
+                                            class="font-bold dark:text-white text-center text-orange-500"><?php echo e($agents->count()); ?></span>
                                     </p>
                                     <h5 class=""></h5>
                                 </div>
@@ -454,7 +454,7 @@
                                     <p
                                         class=" font-sans text-center text-sm font-semibold leading-normal uppercase dark:text-white dark:opacity-60">
                                         Congés en attente: <span
-                                            class="font-bold text-center text-emerald-500">{{ $nombretotal }}</span>
+                                            class="font-bold text-center text-emerald-500"><?php echo e($nombretotal); ?></span>
                                     </p>
                                     <h5 class=" "></h5>
                                 </div>
@@ -483,18 +483,18 @@
                         <div class="flex flex-row -mx-3">
                             <div class="flex-none w-2/3 max-w-full  px-3">
                                 <div>
-                                    @if ($promotions->count() > 0)
+                                    <?php if($promotions->count() > 0): ?>
                                         <p
                                             class=" font-sans text-sm text-center font-semibold leading-normal uppercase dark:text-white dark:opacity-60">
-                                            <span class="text-violet-500">{{ $promotions->count() }}</span>
+                                            <span class="text-violet-500"><?php echo e($promotions->count()); ?></span>
                                             promotion(s) accordée(s).
                                         </p>
-                                    @else
+                                    <?php else: ?>
                                         <p
                                             class=" font-sans text-sm text-center font-semibold leading-normal uppercase dark:text-white dark:opacity-60">
 
                                             Aucune promotion accordée.</p>
-                                    @endif
+                                    <?php endif; ?>
                                 </div>
                             </div>
                             <div class="px-3 text-right basis-1/3">
@@ -514,7 +514,7 @@
             <div class="flex flex-col text-center space-y-4">
 
                 <a class="shadow-lg text-sm ease-in-out transform transition-all  duration-300 my-0 mx-4 flex items-center whitespace-nowrap rounded-lg bg-white hover:bg-gradient-to-r hover:from-blue-200 hover:to-[#5e72e4] font-semibold text-slate-700 hover:text-"
-                    href="{{ route('agentRetraite') }}">
+                    href="<?php echo e(route('agentRetraite')); ?>">
 
                     <span class="ml-1 py-3 duration-300 select-none opacity-100 pointer-events-none  ease-soft">Agents
                         à la retraite</span>
@@ -524,7 +524,7 @@
             <div class="flex flex-col space-y-4">
 
                 <a class=" shadow-lg text-sm ease-in-out transform transition-all duration-300 my-0 mx-4 flex items-center whitespace-nowrap rounded-lg bg-white  hover:bg-gradient-to-r hover:from-blue-200 hover:to-[#5e72e4]  font-semibold text-slate-700 hover:text-"
-                    href="{{ route('agentActif') }}">
+                    href="<?php echo e(route('agentActif')); ?>">
                     <span class="ml-1 py-3 duration-300 select-none opacity-100 pointer-events-none ease-soft">Agents
                         actifs</span>
                 </a>
@@ -534,7 +534,7 @@
             <div class="">
 
                 <a class=" shadow-lg text-sm ease-in-out transform transition-all duration-300 my-0 mx-4 flex items-center whitespace-nowrap rounded-lg bg-white  hover:bg-gradient-to-r hover:from-blue-200 hover:to-[#5e72e4]  font-semibold text-slate-700 hover:text-"
-                    href="{{ route('agentDemissionaire') }}">
+                    href="<?php echo e(route('agentDemissionaire')); ?>">
 
                     <span
                         class="ml-1 py-3 duration-300 select-none opacity-100 pointer-events-none ease-soft">Démissionnaires</span>
@@ -548,7 +548,7 @@
             <div class="flex flex-col space-y-4">
 
                 <a class=" shadow-lg text-sm ease-in-out transform transition-all duration-300 my-0 mx-4 flex items-center whitespace-nowrap rounded-lg bg-white  hover:bg-gradient-to-r hover:from-blue-200 hover:to-[#5e72e4]  font-semibold text-slate-700 hover:text-"
-                    href="{{ route('agentmutes') }}">
+                    href="<?php echo e(route('agentmutes')); ?>">
 
                     <span class="py-3 ml-1 duration-300 select-none opacity-100 pointer-events-none ease-soft">Agents
                         mutés</span>
@@ -558,33 +558,34 @@
         </div>
         <div>
             <div class="p-8 bg-white m-9 shadow-lg ">
-                @if (session('error'))
+                <?php if(session('error')): ?>
                     <div class="bg-red-100 text-red-700 p-2 rounded mb-4">
-                        {{ session('error') }}
+                        <?php echo e(session('error')); ?>
+
                     </div>
-                @endif
-                @if (!empty($alertes) && count($alertes) > 0)
-                    @foreach ($alertes as $alerte)
-                        @php
+                <?php endif; ?>
+                <?php if(!empty($alertes) && count($alertes) > 0): ?>
+                    <?php $__currentLoopData = $alertes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $alerte): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <?php
                             $agent = \App\Models\Agent::find($alerte['id']);
-                        @endphp
+                        ?>
 
                         <div class="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4 rounded mb-4">
                             <h2 class="font-bold mb-2">Monté de grade à venir</h2>
                             <ul class="list-disc list-inside">
-                                <a href="{{ route('ajouter.grade', $agent->id) }}">
+                                <a href="<?php echo e(route('ajouter.grade', $agent->id)); ?>">
                                     <li>
-                                        <strong>{{ $alerte['nom'] }} </strong>
-                                        aura une montée de grade le {{ $alerte['date'] }}.
+                                        <strong><?php echo e($alerte['nom']); ?> </strong>
+                                        aura une montée de grade le <?php echo e($alerte['date']); ?>.
                                     </li>
                                 </a>
 
                             </ul>
                         </div>
-                    @endforeach
-                @else
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                <?php else: ?>
                     Aucune montée en grade à venir.
-                @endif
+                <?php endif; ?>
             </div>
         </div>
 
@@ -681,34 +682,35 @@
 
             <div class="break-word p-6 bg-white rounded-2xl shadow-xl max-h-150 overflow-y-auto">
                 <h1 class="pb-2 text-center text-[#5e72e4]">Congés en attente de validation</h1>
-                @if ($conges->isEmpty())
+                <?php if($conges->isEmpty()): ?>
                     <p>Aucun congé en attente de validation.</p>
-                @else
+                <?php else: ?>
                     <ul class="">
-                        @foreach ($conges as $conge)
+                        <?php $__currentLoopData = $conges; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $conge): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <span class="text-red-500 text-xs">Congé</span>
-                            <a href="{{ route('Conges') }}" class="py-3">
+                            <a href="<?php echo e(route('Conges')); ?>" class="py-3">
                                 <li class="p-2 border border-gray-300 rounded-lg shadow-md">
-                                    @php
+                                    <?php
                                         $agent = $conge->agents->first(); // pas agents()
-                                    @endphp
+                                    ?>
 
-                                    <p>Un {{ $conge->Type_conge }} est demandé par
-                                        @if ($agent)
-                                            l'agent {{ $agent->nom_Agent }} {{ $agent->prenom_Agent }}
-                                        @else
+                                    <p>Un <?php echo e($conge->Type_conge); ?> est demandé par
+                                        <?php if($agent): ?>
+                                            l'agent <?php echo e($agent->nom_Agent); ?> <?php echo e($agent->prenom_Agent); ?>
+
+                                        <?php else: ?>
                                             un agent inconnu
-                                        @endif
+                                        <?php endif; ?>
                                     </p>
 
-                                    <span class="text-sm">Statut: {{ $conge->statut_conge }}</span>
+                                    <span class="text-sm">Statut: <?php echo e($conge->statut_conge); ?></span>
                                 </li>
                             </a>
-                        @endforeach
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
 
                     </ul>
-                @endif
+                <?php endif; ?>
             </div>
         </div>
 
@@ -735,3 +737,4 @@
                 }
             }
         </script>
+<?php /**PATH C:\Users\Sarah\Downloads\MyProject\resources\views/site.blade.php ENDPATH**/ ?>

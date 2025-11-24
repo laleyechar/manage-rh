@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="{{ asset('images/icone[1].png') }}" />
+    <link rel="icon" type="image/png" href="<?php echo e(asset('images/icone[1].png')); ?>" />
     <title>HRManager</title>
-    @vite('resources/css/app.css')
-    @vite('resources/js/app.js')
+    <?php echo app('Illuminate\Foundation\Vite')('resources/css/app.css'); ?>
+    <?php echo app('Illuminate\Foundation\Vite')('resources/js/app.js'); ?>
 </head>
 
 <body
@@ -20,7 +20,7 @@
         <div class="h-25">
             <a class="block px-14 py-6 m-0 text-sm whitespace-nowrap dark:text-white text-slate-700" href=""
                 target="_blank">
-                <img src="{{ asset('images/logob.png') }}"
+                <img src="<?php echo e(asset('images/logob.png')); ?>"
                     class="inline max-h-15 max-w-full transition-all duration-200 ml-4 ease-nav-brand"
                     alt="main_logo"  />
             </a>
@@ -33,7 +33,7 @@
             <ul class="flex flex-col pl-0 mb-0">
                 <li class="mt-0.5 w-full ">
                     <a class="p-2 dark:text-white dark:opacity-80 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
-                        href="{{ route('site') }}">
+                        href="<?php echo e(route('site')); ?>">
                         <div
                             class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center ">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -48,7 +48,7 @@
 
                 <li class="mt-0.5 w-full">
                     <a class="bg-[#5e72e4]/10 p-2 py-3 dark:text-white dark:opacity-80 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap rounded-lg px-4 font-semibold text-slate-700 transition-colors"
-                        href="{{ route('liste') }}">
+                        href="<?php echo e(route('liste')); ?>">
                         <div
                             class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center ">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -62,7 +62,7 @@
                 </li>
                 <li class="mt-0.5 w-full">
                     <a class="p-2 dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
-                        href="{{ route('afficher.fichier') }}">
+                        href="<?php echo e(route('afficher.fichier')); ?>">
                         <div
                             class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center ">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -77,7 +77,7 @@
                 </li>
                 <li class="mt-0.5 w-full">
                     <a class="p-2 dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
-                        href="{{ route('formations') }}">
+                        href="<?php echo e(route('formations')); ?>">
                         <div
                             class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center fill-current stroke-0 text-center ">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -93,7 +93,7 @@
 
                 <li class="mt-0.5 w-full">
                     <a class="p-2 dark:text-white dark:opacity-80 py-3 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
-                        href="{{ route('promotions') }}">
+                        href="<?php echo e(route('promotions')); ?>">
                         <div
                             class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center ">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -108,7 +108,7 @@
                 </li>
                 <li class="mt-0.5 w-full">
                     <a class="p-2 dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
-                        href="{{ route('Conges') }}">
+                        href="<?php echo e(route('Conges')); ?>">
                         <div
                             class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center ">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text--500" fill="none"
@@ -123,7 +123,7 @@
 
                 <li class="mt-0.5 w-full">
                     <a class="p-2 dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
-                        href="{{ route('Services') }}">
+                        href="<?php echo e(route('Services')); ?>">
                         <div
                             class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center ">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -139,7 +139,7 @@
                 </li>
                 <li class="mt-0.5 w-full">
                     <a class="p-2 dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors "
-                        href="{{ route('Poste') }}">
+                        href="<?php echo e(route('Poste')); ?>">
                         <div
                             class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center ">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -152,14 +152,14 @@
                             postes</span>
                     </a>
                 </li>
-                @auth
-                    @if (Auth::user()->hasRole('admin'))
+                <?php if(auth()->guard()->check()): ?>
+                    <?php if(Auth::user()->hasRole('admin')): ?>
                         <hr
                             class="border-0 h-px mx-4 bg-gradient-to-r from-gray-100 via-black/60 to-gray-200 dark:from-transparent dark:via-white dark:to-transparent" />
 
                         <li class="mt-0.5 w-full">
                             <a class="p-2 dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
-                                href="{{ route('admin.users.index') }}">
+                                href="<?php echo e(route('admin.users.index')); ?>">
                                 <div
                                     class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center ">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -175,7 +175,7 @@
                         </li>
                         <li class="mt-0.5 w-full">
                             <a class="p-2 dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
-                                href="{{ route('journal') }}">
+                                href="<?php echo e(route('journal')); ?>">
                                 <div
                                     class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center ">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -189,7 +189,7 @@
                         </li>
                         <li class="mt-0.5 w-full">
                             <a class="p-2 dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
-                                href="{{ route('agents.supprimes') }}">
+                                href="<?php echo e(route('agents.supprimes')); ?>">
                                 <div
                                     class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center ">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -202,8 +202,8 @@
                                     supprimés</span>
                             </a>
                         </li>
-                    @endif
-                @endauth
+                    <?php endif; ?>
+                <?php endif; ?>
             </ul>
         </div>
     </aside>
@@ -259,13 +259,13 @@
                                 <div id="userMenu"
                                     class="hidden absolute top-4 right-0 mt-10 w-48 bg-white border border-gray-100 rounded-md shadow-lg z-50">
                                     <!-- Connecté -->
-                                    <a href="{{ route('afficherProfil') }}"
+                                    <a href="<?php echo e(route('afficherProfil')); ?>"
                                         class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">
                                         <i class="fas fa-user mr-2"></i> Mon profil
                                     </a>
                                     <div class="border-t border-gray-100 my-1"></div>
-                                    <form method="POST" action={{ route('logout') }}>
-                                        @csrf
+                                    <form method="POST" action=<?php echo e(route('logout')); ?>>
+                                        <?php echo csrf_field(); ?>
                                         <button type="submit"
                                             class="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">
                                             <i class="fas fa-right-from-bracket mr-2"></i> Déconnexion
@@ -306,21 +306,21 @@
                 </div>
         </nav>
 
-        @if ($errors->any())
+        <?php if($errors->any()): ?>
             <div class="m-5 mb-4 p-4 shadow-lg rounded-lg bg-red-100 text-red-700">
                 <strong>Erreur(s) détectée(s) :</strong>
                 <ul class="mt-2 list-disc list-inside">
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
+                    <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <li><?php echo e($error); ?></li>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </ul>
             </div>
-        @endif
+        <?php endif; ?>
         <div class=" mx-5 bg-white shadow-xl rounded-2xl mt-12 pt-5 ">
             <div class="rounded-t-lg flex justify-between mx-5 text-lg font-bold ">
                 <h3>Liste des personnels</h3>
                 <div class="flex space-x-3">
-                    <a href="{{ route('formulaire') }}"
+                    <a href="<?php echo e(route('formulaire')); ?>"
                         class="inline-flex items-center gap-2 hover:scale-110 text-white bg-[#5e72e4] hover:bg-blue-700 p-2 rounded-full shadow">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                             stroke-width="1.5" stroke="currentColor" class="w-6 h-6  ">
@@ -330,7 +330,7 @@
                                 0-4.512-.645-6.374-1.766Z" />
                         </svg>
                     </a>
-                    <a href="{{ route('agents.pdf') }}"
+                    <a href="<?php echo e(route('agents.pdf')); ?>"
                         class="inline-flex items-center gap-2 hover:scale-110 text-white bg-green-400 hover:bg-green-500 p-2 rounded-full shadow"><svg
                             xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                             stroke="currentColor" class="size-6">
@@ -360,37 +360,37 @@
                         <th class="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                             Actions</th>
                     </thead>
-                    @if ($employes->count() > 0)
-                        @foreach ($employes as $employe)
+                    <?php if($employes->count() > 0): ?>
+                        <?php $__currentLoopData = $employes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $employe): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <tbody class="divide-y divide-gray-200">
                                 <tr class="">
                                     <td class=" whitespace-nowrap text-sm text-gray-900">
-                                        <img src="{{ asset('storage/' . $employe->photo_profil_Agent) }}"
+                                        <img src="<?php echo e(asset('storage/' . $employe->photo_profil_Agent)); ?>"
                                             class="inline-flex items-center justify-center mr-4 text-sm text-white transition-all duration-200 ease-in-out h-9 w-9 rounded-xl"
                                             alt="user1" />
                                     </td>
                                     <td class="px-3 py-3 whitespace-nowrap text-sm text-gray-900">
-                                        {{ $employe->matricule_Agent }}</td>
+                                        <?php echo e($employe->matricule_Agent); ?></td>
                                     <td class="px-3 py-3 whitespace-nowrap text-sm text-gray-900">
-                                        {{ $employe->nom_Agent }}</td>
+                                        <?php echo e($employe->nom_Agent); ?></td>
                                     <td class="px-3 py-3 whitespace-nowrap text-sm text-gray-900">
-                                        {{ $employe->prenom_Agent }}</td>
+                                        <?php echo e($employe->prenom_Agent); ?></td>
                                     <td class="px-3 py-3 text-sm text-left text-green-600"><span
-                                            class="inline break-word">{{ $employe->poste?->libelle_poste ?? 'Poste non défini' }}</span>
+                                            class="inline break-word"><?php echo e($employe->poste?->libelle_poste ?? 'Poste non défini'); ?></span>
                                     </td>
                                     <td class="px-3 py-3 text-sm text-left "><span class="inline break-word">
                                             <p class="">
                                                 Catégorie <span
-                                                    class="font-semibold text-blue-600">{{ $employe->categorie }}</span>,
+                                                    class="font-semibold text-blue-600"><?php echo e($employe->categorie); ?></span>,
                                                 Classe <span
-                                                    class="font-semibold text-green-600">{{ $employe->classe }}</span>,
+                                                    class="font-semibold text-green-600"><?php echo e($employe->classe); ?></span>,
                                                 Échelon <span
-                                                    class="font-semibold text-purple-600">{{ $employe->echelon }}</span>
+                                                    class="font-semibold text-purple-600"><?php echo e($employe->echelon); ?></span>
                                             </p>
                                         </span></td>
                                     <td class="px-3 py-3 whitespace-nowrap text-sm text-gray-900 flex space-x-3">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                            onclick="window.location='{{ route('info', ['id' => $employe->id]) }}';"
+                                            onclick="window.location='<?php echo e(route('info', ['id' => $employe->id])); ?>';"
                                             stroke-width="1.5" stroke="currentColor"
                                             class="size-6 cursor-pointer hover:text-gray-600">
                                             <path stroke-linecap="round" stroke-linejoin="round"
@@ -398,7 +398,7 @@
                                             <path stroke-linecap="round" stroke-linejoin="round"
                                                 d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                                         </svg>
-                                        <a href="{{ route('personnel.edit', ['id' => $employe->id]) }}"
+                                        <a href="<?php echo e(route('personnel.edit', ['id' => $employe->id])); ?>"
                                             class="text-blue-500 hover:text-blue-700">
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none"
                                                 viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
@@ -407,41 +407,27 @@
                                                     d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
                                             </svg>
                                         </a>
-                                        {{-- Boutton supprimer 
-                                        <form action="{{ route('personnel.delete', ['id' => $employe->id]) }}"
-                                            method="POST"
-                                            onsubmit="return confirm('Voulez-vous vraiment supprimer cet employé ?');">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="text-red-500 hover:text-red-700">
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                                                    class="size-6 cursor-pointer hover:text-red-600"
-                                                    id="butSupprimer">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
-                                                </svg>
-                                            </button> --}}
+                                        
                                         </form>
                                     </td>
                                 </tr>
                             </tbody>
-                        @endforeach
-                    @else
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    <?php else: ?>
                         <span>Aucun enregisrement dans la base de donné</span>
-                    @endif
+                    <?php endif; ?>
                 </table>
             </div>
             <div id="overlay" class="fixed inset-0 bg-gray-600 opacity-50 hidden"></div>
-            @if ($errors->any())
+            <?php if($errors->any()): ?>
                 <div class="alert alert-danger text-red-500">
                     <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
+                        <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <li><?php echo e($error); ?></li>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </ul>
                 </div>
-            @endif
+            <?php endif; ?>
 
         </div>
     </main>
@@ -521,3 +507,4 @@
 
 
 </body>
+<?php /**PATH C:\Users\Sarah\Downloads\MyProject\resources\views/employe.blade.php ENDPATH**/ ?>

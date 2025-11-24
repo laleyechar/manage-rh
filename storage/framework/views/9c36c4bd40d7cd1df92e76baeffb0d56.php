@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="{{ asset('images/icone[1].png') }}" />
+    <link rel="icon" type="image/png" href="<?php echo e(asset('images/icone[1].png')); ?>" />
     <title>HRManager</title>
-    @vite('resources/css/app.css')
-    @vite('resources/js/app.js')
+    <?php echo app('Illuminate\Foundation\Vite')('resources/css/app.css'); ?>
+    <?php echo app('Illuminate\Foundation\Vite')('resources/js/app.js'); ?>
 </head>
 
 <body
@@ -20,7 +20,7 @@
         <div class="h-25">
             <a class="block px-14 py-6 m-0 text-sm whitespace-nowrap dark:text-white text-slate-700" href=""
                 target="_blank">
-                <img src="{{ asset('images/logob.png') }}"
+                <img src="<?php echo e(asset('images/logob.png')); ?>"
                     class="inline max-h-15 max-w-full transition-all duration-200 ml-4 ease-nav-brand"
                     alt="main_logo"  />
             </a>
@@ -33,11 +33,11 @@
             <ul class="flex flex-col pl-0 mb-0">
                 <li class="mt-0.5 w-full ">
                     <a class="p-2 dark:text-white dark:opacity-80 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
-                        href="{{ route('site') }}">
+                        href="<?php echo e(route('site')); ?>">
                         <div
                             class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center ">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                stroke-width="1.5" stroke="currentColor" class="size-6 ">
+                                stroke-width="1.5" stroke="currentColor" class="size-6">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
                             </svg>
@@ -48,11 +48,11 @@
 
                 <li class="mt-0.5 w-full">
                     <a class="bg-[#5e72e4]/10 p-2 py-3 dark:text-white dark:opacity-80 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap rounded-lg px-4 font-semibold text-slate-700 transition-colors"
-                        href="{{ route('liste') }}">
+                        href="<?php echo e(route('liste')); ?>">
                         <div
                             class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center ">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                stroke-width="1.5" stroke="currentColor" class="size-6 ">
+                                stroke-width="1.5" stroke="currentColor" class="size-6">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
                             </svg>
@@ -62,7 +62,7 @@
                 </li>
                 <li class="mt-0.5 w-full">
                     <a class="p-2 dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
-                        href="{{ route('afficher.fichier') }}">
+                        href="<?php echo e(route('afficher.fichier')); ?>">
                         <div
                             class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center ">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -77,38 +77,37 @@
                 </li>
                 <li class="mt-0.5 w-full">
                     <a class="p-2 dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
-                        href="{{ route('formations') }}">
+                        href="<?php echo e(route('formations')); ?>">
                         <div
                             class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center fill-current stroke-0 text-center ">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                stroke-width="1.5" stroke="currentColor" class="size-6">
+                                stroke-width="1.5" stroke="currentColor" class="size-6 ">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M6 6.878V6a2.25 2.25 0 0 1 2.25-2.25h7.5A2.25 2.25 0 0 1 18 6v.878m-12 0c.235-.083.487-.128.75-.128h10.5c.263 0 .515.045.75.128m-12 0A2.25 2.25 0 0 0 4.5 9v.878m13.5-3A2.25 2.25 0 0 1 19.5 9v.878m0 0a2.246 2.246 0 0 0-.75-.128H5.25c-.263 0-.515.045-.75.128m15 0A2.25 2.25 0 0 1 21 12v6a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 18v-6c0-.98.626-1.813 1.5-2.122" />
                             </svg>
                         </div>
-                        <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Planification des
-                            formations</span>
+                        <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Planification des formations</span>
                     </a>
                 </li>
 
                 <li class="mt-0.5 w-full">
                     <a class="p-2 dark:text-white dark:opacity-80 py-3 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
-                        href="{{ route('promotions') }}">
+                        href="<?php echo e(route('promotions')); ?>">
                         <div
                             class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center ">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                stroke-width="1.5" stroke="currentColor" class="size-6 ">
+                                stroke-width="1.5" stroke="currentColor" class="size-6">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M12 3.75v16.5M2.25 12h19.5M6.375 17.25a4.875 4.875 0 0 0 4.875-4.875V12m6.375 5.25a4.875 4.875 0 0 1-4.875-4.875V12m-9 8.25h16.5a1.5 1.5 0 0 0 1.5-1.5V5.25a1.5 1.5 0 0 0-1.5-1.5H3.75a1.5 1.5 0 0 0-1.5 1.5v13.5a1.5 1.5 0 0 0 1.5 1.5Zm12.621-9.44c-1.409 1.41-4.242 1.061-4.242 1.061s-.349-2.833 1.06-4.242a2.25 2.25 0 0 1 3.182 3.182ZM10.773 7.63c1.409 1.409 1.06 4.242 1.06 4.242S9 12.22 7.592 10.811a2.25 2.25 0 1 1 3.182-3.182Z" />
                             </svg>
                         </div>
-                        <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Enregistrer les
-                            promotions</span>
+                        <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Enregistrer les promotions</span>
                     </a>
                 </li>
+
                 <li class="mt-0.5 w-full">
                     <a class="p-2 dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
-                        href="{{ route('Conges') }}">
+                        href="<?php echo e(route('Conges')); ?>">
                         <div
                             class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center ">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text--500" fill="none"
@@ -123,7 +122,7 @@
 
                 <li class="mt-0.5 w-full">
                     <a class="p-2 dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
-                        href="{{ route('Services') }}">
+                        href="<?php echo e(route('Services')); ?>">
                         <div
                             class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center ">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -133,13 +132,12 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 6h.008v.008H6V6Z"   />
                             </svg>
                         </div>
-                        <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Gestion des
-                            services</span>
+                        <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Gestion des services</span>
                     </a>
                 </li>
                 <li class="mt-0.5 w-full">
                     <a class="p-2 dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors "
-                        href="{{ route('Poste') }}">
+                        href="<?php echo e(route('Poste')); ?>">
                         <div
                             class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center ">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -152,14 +150,14 @@
                             postes</span>
                     </a>
                 </li>
-                @auth
-                    @if (Auth::user()->hasRole('admin'))
+                <?php if(auth()->guard()->check()): ?>
+                    <?php if(Auth::user()->hasRole('admin')): ?>
                         <hr
                             class="border-0 h-px mx-4 bg-gradient-to-r from-gray-100 via-black/60 to-gray-200 dark:from-transparent dark:via-white dark:to-transparent" />
 
                         <li class="mt-0.5 w-full">
                             <a class="p-2 dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
-                                href="{{ route('admin.users.index') }}">
+                                href="<?php echo e(route('admin.users.index')); ?>">
                                 <div
                                     class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center ">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -175,7 +173,7 @@
                         </li>
                         <li class="mt-0.5 w-full">
                             <a class="p-2 dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
-                                href="{{ route('journal') }}">
+                                href="<?php echo e(route('journal')); ?>">
                                 <div
                                     class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center ">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -189,7 +187,7 @@
                         </li>
                         <li class="mt-0.5 w-full">
                             <a class="p-2 dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
-                                href="{{ route('agents.supprimes') }}">
+                                href="<?php echo e(route('agents.supprimes')); ?>">
                                 <div
                                     class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center ">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -202,8 +200,8 @@
                                     supprimés</span>
                             </a>
                         </li>
-                    @endif
-                @endauth
+                    <?php endif; ?>
+                <?php endif; ?>
             </ul>
         </div>
     </aside>
@@ -229,121 +227,117 @@
 
                 <div class="flex items-center mt-2 grow sm:mt-0 sm:mr-6 md:mr-0 lg:flex lg:basis-auto">
                     <div class="flex items-center md:ml-auto md:pr-4">
-                        <div class="flex items-center md:ml-auto md:pr-4">
-                            <div class="relative flex flex-wrap items-stretch w-full transition-all rounded-lg ease">
-                                <div class="flex border border-gray-300 bg-white rounded-lg ">
+                        <div class="relative flex flex-wrap items-stretch w-full transition-all rounded-lg ease">
+                            <form action="<?php echo e(route('search')); ?>" method="get" class="">
+                                <a href="" id="barreCentrale"
+                                    class="flex border border-gray-300 bg-white rounded-lg ">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke-width="1.5" stroke="currentColor"
                                         class="size-7  z-20 flex-auto dark:bg-slate-850 dark:text-white   pt-2  text-gray-500 transition-all ">
                                         <path stroke-linecap="round" stroke-linejoin="round"
                                             d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
                                     </svg>
-                                    <input type="text" id="input_recherche" type="text"
-                                        class="text-sm  focus:outline-none relative  -ml-px block min-w-0 flex-auto   dark:bg-slate-850 dark:text-white  py-2 pr-3 text-gray-700 transition-all placeholder:text-gray-500  "
+                                    <input type="text" onclick="" type="text"
+                                        class="caret-transparent pointer-events-none select-none cursor-pointer text-sm  focus:outline-none relative  -ml-px block min-w-0 flex-auto   dark:bg-slate-850 dark:text-white  py-2 pr-3 text-gray-700 transition-all placeholder:text-gray-500  "
                                         placeholder="Rechercher..." />
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <ul class="pl-7 flex flex-row justify-end pl-0 mb-0 list-none md-max:w-full">
-                            <li class="flex items-center text-white">
-                                <button id="btnuser" onclick="afficherMenu()">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                        stroke-width="1.5" stroke="currentColor" id="btnuser" class="size-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
-                                    </svg>
-
-                                </button>
-                                <div id="userMenu"
-                                    class="hidden absolute top-4 right-0 mt-10 w-48 bg-white border border-gray-100 rounded-md shadow-lg z-50">
-                                    <!-- Connecté -->
-                                    <a href="{{ route('afficherProfil') }}"
-                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">
-                                        <i class="fas fa-user mr-2"></i> Mon profil
-                                    </a>
-                                    <div class="border-t border-gray-100 my-1"></div>
-                                    <form method="POST" action={{ route('logout') }}>
-                                        @csrf
-                                        <button type="submit"
-                                            class="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">
-                                            <i class="fas fa-right-from-bracket mr-2"></i> Déconnexion
-                                        </button>
-                                    </form>
-                                </div>
-                                <script>
-                                    function afficherMenu() {
-                                        const menu = document.getElementById('userMenu');
-                                        menu.classList.toggle('hidden');
-                                    }
-
-                                    // Fermer en cliquant en dehors
-                                    document.addEventListener('click', function(e) {
-                                        const btnuser = document.getElementById('btnuser');
-                                        const menu = document.getElementById('userMenu');
-                                        if (!btnuser.contains(e.target) && !menu.contains(e.target)) {
-                                            menu.classList.add('hidden');
-                                        }
-                                    });
-                                </script>
-                            </li>
-                            <li class="flex items-center pl-4 xl:hidden">
-                                <a href="javascript:;"
-                                    class="block p-0 text-sm text-white transition-all ease-nav-brand" sidenav-trigger>
-                                    <div onclick="toggleMenu()" class="w-4.5 overflow-hidden" id="toggleMenu">
-                                        <i
-                                            class="ease mb-0.75 relative block h-0.5 rounded-sm bg-white transition-all"></i>
-                                        <i
-                                            class="ease mb-0.75 relative block h-0.5 rounded-sm bg-white transition-all"></i>
-                                        <i class="ease relative block h-0.5 rounded-sm bg-white transition-all"></i>
-                                    </div>
                                 </a>
-                            </li>
+                            </form>
 
-                        </ul>
+                        </div>
                     </div>
-                </div>
-        </nav>
 
-        @if ($errors->any())
-            <div class="m-5 mb-4 p-4 shadow-lg rounded-lg bg-red-100 text-red-700">
-                <strong>Erreur(s) détectée(s) :</strong>
-                <ul class="mt-2 list-disc list-inside">
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
+                    <ul class="pl-7 flex flex-row justify-end pl-0 mb-0 list-none md-max:w-full">
+                        <li class="flex items-center text-white">
+                            <button id="btnuser" onclick="afficherMenu()">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" id="btnuser" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+                                </svg>
+
+                            </button>
+                            <div id="userMenu"
+                                class="hidden absolute top-4 right-0 mt-10 w-48 bg-white border border-gray-100 rounded-md shadow-lg z-50">
+                                <!-- Connecté -->
+                                <a href="<?php echo e(route('afficherProfil')); ?>"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">
+                                    <i class="fas fa-user mr-2"></i> Mon profil
+                                </a>
+                                <div class="border-t border-gray-100 my-1"></div>
+                                <form method="POST" action=<?php echo e(route('logout')); ?>>
+                                    <?php echo csrf_field(); ?>
+                                    <button type="submit"
+                                        class="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">
+                                        <i class="fas fa-right-from-bracket mr-2"></i> Déconnexion
+                                    </button>
+                                </form>
+                            </div>
+                            <script>
+                                function afficherMenu() {
+                                    const menu = document.getElementById('userMenu');
+                                    menu.classList.toggle('hidden');
+                                }
+
+                                // Fermer en cliquant en dehors
+                                document.addEventListener('click', function(e) {
+                                    const btnuser = document.getElementById('btnuser');
+                                    const menu = document.getElementById('userMenu');
+                                    if (!btnuser.contains(e.target) && !menu.contains(e.target)) {
+                                        menu.classList.add('hidden');
+                                    }
+                                });
+                            </script>
+                        </li>
+                        <li class="flex items-center pl-4 xl:hidden">
+                            <a href="javascript:;" class="block p-0 text-sm text-white transition-all ease-nav-brand"
+                                sidenav-trigger>
+                                <div onclick="toggleMenu()" class="w-4.5 overflow-hidden" id="toggleMenu">
+                                    <i
+                                        class="ease mb-0.75 relative block h-0.5 rounded-sm bg-white transition-all"></i>
+                                    <i
+                                        class="ease mb-0.75 relative block h-0.5 rounded-sm bg-white transition-all"></i>
+                                    <i class="ease relative block h-0.5 rounded-sm bg-white transition-all"></i>
+                                </div>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
             </div>
-        @endif
+        </nav>
+        <div id="overlayRecherche" class="fixed inset-0 bg-gray-600 opacity-50 hidden z-40"></div>
+        <div id="barreSecond"
+            class="hidden fixed left-1/2 transform -translate-x-1/2 top-20 z-50 bg-white rounded-xl w-full max-w-xl  bg-white rounded-xl mt-7 z-50">
+            <div class="flex  shadow-lg w-full">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-6 h-6 mt-2 ml-2 text-gray-600">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                </svg>
+                <input type="text" id="searchInput" class="w-full p-2 rounded-lg outline-none"
+                    placeholder="Rechercher..." />
+            </div>
+
+            <div id="searchResults" class="  bg-white rounded-b-xl   max-h-80 overflow-y-auto z-50">
+                <div class="p-3 font-bold text-xs">Résultats</div>
+                <ul id="resultsList" class="hover:text-gray-700"></ul>
+            </div>
+        </div>
         <div class=" mx-5 bg-white shadow-xl rounded-2xl mt-12 pt-5 ">
-            <div class="rounded-t-lg flex justify-between mx-5 text-lg font-bold ">
-                <h3>Liste des personnels</h3>
-                <div class="flex space-x-3">
-                    <a href="{{ route('formulaire') }}"
-                        class="inline-flex items-center gap-2 hover:scale-110 text-white bg-[#5e72e4] hover:bg-blue-700 p-2 rounded-full shadow">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6  ">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M18 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 1 1-6.75 0
-                                3.375 3.375 0 0 1 6.75 0ZM3 19.235v-.11a6.375 6.375 0 0 1
-                                12.75 0v.109A12.318 12.318 0 0 1 9.374 21c-2.331
-                                0-4.512-.645-6.374-1.766Z" />
-                        </svg>
-                    </a>
-                    <a href="{{ route('agents.pdf') }}"
-                        class="inline-flex items-center gap-2 hover:scale-110 text-white bg-green-400 hover:bg-green-500 p-2 rounded-full shadow"><svg
-                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="size-6">
+            <div class="rounded-t-lg text-center flex justify-between mx-5 text-lg font-bold ">
+                <h3>Liste des agents actifs</h3>
+                <div>
+                    <a href="<?php echo e(route('agents.actifs.pdf')); ?>"><svg xmlns="http://www.w3.org/2000/svg"
+                            fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                            class="size-6 text-green-500 hover:scale-110 mr-5">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m.75 12 3 3m0 0 3-3m-3 3v-6m-1.5-9H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
                         </svg> </a>
+
                 </div>
             </div>
             <div class="bg-white p-4 shadow-lg ">
-                <div id="pasdeResultat" style="display: none;" class="text-center text-gray-500 italic mt-4">
-                    Aucun résultat trouvé
-                </div>
-                <table id="table_agent" class="min-w-full divide-y divide-gray-200">
+                <table class="min-w-full divide-y divide-gray-200">
                     <thead class="font-bold">
                         <th class=" text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                         </th>
@@ -357,91 +351,56 @@
                             Poste</th>
                         <th class="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                             Grade actuel</th>
-                        <th class="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                            Actions</th>
+
                     </thead>
-                    @if ($employes->count() > 0)
-                        @foreach ($employes as $employe)
+                    <?php if($agents->count() > 0): ?>
+                        <?php $__currentLoopData = $agents; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $agent): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <tbody class="divide-y divide-gray-200">
                                 <tr class="">
                                     <td class=" whitespace-nowrap text-sm text-gray-900">
-                                        <img src="{{ asset('storage/' . $employe->photo_profil_Agent) }}"
+                                        <img src="<?php echo e(asset('storage/' . $agent->photo_profil_Agent)); ?>"
                                             class="inline-flex items-center justify-center mr-4 text-sm text-white transition-all duration-200 ease-in-out h-9 w-9 rounded-xl"
                                             alt="user1" />
                                     </td>
                                     <td class="px-3 py-3 whitespace-nowrap text-sm text-gray-900">
-                                        {{ $employe->matricule_Agent }}</td>
+                                        <?php echo e($agent->matricule_Agent); ?></td>
                                     <td class="px-3 py-3 whitespace-nowrap text-sm text-gray-900">
-                                        {{ $employe->nom_Agent }}</td>
+                                        <?php echo e($agent->nom_Agent); ?></td>
                                     <td class="px-3 py-3 whitespace-nowrap text-sm text-gray-900">
-                                        {{ $employe->prenom_Agent }}</td>
+                                        <?php echo e($agent->prenom_Agent); ?></td>
                                     <td class="px-3 py-3 text-sm text-left text-green-600"><span
-                                            class="inline break-word">{{ $employe->poste?->libelle_poste ?? 'Poste non défini' }}</span>
-                                    </td>
-                                    <td class="px-3 py-3 text-sm text-left "><span class="inline break-word">
-                                            <p class="">
-                                                Catégorie <span
-                                                    class="font-semibold text-blue-600">{{ $employe->categorie }}</span>,
-                                                Classe <span
-                                                    class="font-semibold text-green-600">{{ $employe->classe }}</span>,
-                                                Échelon <span
-                                                    class="font-semibold text-purple-600">{{ $employe->echelon }}</span>
-                                            </p>
-                                        </span></td>
-                                    <td class="px-3 py-3 whitespace-nowrap text-sm text-gray-900 flex space-x-3">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                            onclick="window.location='{{ route('info', ['id' => $employe->id]) }}';"
-                                            stroke-width="1.5" stroke="currentColor"
-                                            class="size-6 cursor-pointer hover:text-gray-600">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                                        </svg>
-                                        <a href="{{ route('personnel.edit', ['id' => $employe->id]) }}"
-                                            class="text-blue-500 hover:text-blue-700">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                                                class="size-6 cursor-pointer hover:text-blue-600" id="butModifier">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
-                                            </svg>
-                                        </a>
-                                        {{-- Boutton supprimer 
-                                        <form action="{{ route('personnel.delete', ['id' => $employe->id]) }}"
-                                            method="POST"
-                                            onsubmit="return confirm('Voulez-vous vraiment supprimer cet employé ?');">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="text-red-500 hover:text-red-700">
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                                                    class="size-6 cursor-pointer hover:text-red-600"
-                                                    id="butSupprimer">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
-                                                </svg>
-                                            </button> --}}
-                                        </form>
-                                    </td>
+                                            class="inline break-word"><?php echo e($agent->poste ? $agent->poste->libelle_poste : 'Aucun service'); ?></span></td>
+                                    <td class="px-3 py-3 text-sm text-left text-green-600"><span
+                                            class="inline break-word">
+                                                <p
+                                                    class="">
+                                                    Catégorie <span
+                                                        class="font-semibold text-blue-600"><?php echo e($agent->categorie); ?></span>,
+                                                    Classe <span
+                                                        class="font-semibold text-green-600"><?php echo e($agent->classe); ?></span>,
+                                                    Échelon <span
+                                                        class="font-semibold text-purple-600"><?php echo e($agent->echelon); ?></span>
+                                                </p>
+                                            </span></td>
+
                                 </tr>
                             </tbody>
-                        @endforeach
-                    @else
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    <?php else: ?>
                         <span>Aucun enregisrement dans la base de donné</span>
-                    @endif
+                    <?php endif; ?>
                 </table>
             </div>
             <div id="overlay" class="fixed inset-0 bg-gray-600 opacity-50 hidden"></div>
-            @if ($errors->any())
+            <?php if($errors->any()): ?>
                 <div class="alert alert-danger text-red-500">
                     <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
+                        <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <li><?php echo e($error); ?></li>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </ul>
                 </div>
-            @endif
+            <?php endif; ?>
 
         </div>
     </main>
@@ -499,25 +458,7 @@
             }
         });
     </script>
-    <script>
-        const input_recherche = document.getElementById('input_recherche');
-        const table_agent = document.getElementById('table_agent');
-        const table_agent_rows = table_agent.querySelectorAll('tbody tr');
-        const pasdeResultat = document.getElementById('pasdeResultat');
-
-        input_recherche.addEventListener('keyup', function() {
-            const filter = this.value.toLowerCase();
-            let anyVisible = false;
-
-            table_agent_rows.forEach(row => {
-                const text = row.textContent.toLowerCase();
-                const isVisible = text.includes(filter);
-                row.style.display = isVisible ? '' : 'none';
-                if (isVisible) anyVisible = true;
-            });
-            pasdeResultat.style.display = anyVisible ? 'none' : '';
-        });
-    </script>
 
 
 </body>
+<?php /**PATH C:\Users\Sarah\Downloads\MyProject\resources\views/agentsactifs.blade.php ENDPATH**/ ?>

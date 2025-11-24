@@ -30,8 +30,53 @@
     </style>
 </head>
 
-<body> <img src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('images/troisenun.png'))) }}"
-        alt="Logo" style="width: 100%; height: 100px; margin-left:auto; margin-right:auto; margin-bottom: 1rem">
+<body>
+    <table
+        style="width: 90%; max-width: 900px; border-collapse: collapse; margin: 3rem auto 0 auto; margin-left: -20px;">
+        <tr>
+            <!-- Côté gauche -->
+            <td style="width: 50%; vertical-align: top;">
+                <table>
+                    <tr>
+                        <td style="vertical-align: top;">
+                            <img src="data:image/jpg;base64,{{ base64_encode(file_get_contents(public_path('images/republique.jpg'))) }}"
+                                style="height: 100px; width: auto; margin-right: 2px; vertical-align: top;  margin-top: -20px;">
+                        </td>
+                        <td style="vertical-align: top; text-align: left;">
+                            <p style="margin: 0; font-weight: bold; white-space: nowrap;">MAIRIE DE PORTO-NOVO</p>
+
+                            <!-- Bande tricolore -->
+                            <div style="width: 120px; height: 7px; margin: 5px 0; overflow: hidden;">
+                                <div style="background-color: green; width: 40%; height: 100%; float: left;"></div>
+                                <div style="background-color: yellow; width: 20%; height: 100%; float: left;"></div>
+                                <div style="background-color: red; width: 40%; height: 100%; float: left;"></div>
+                            </div>
+
+                            <p style="margin: 0; clear: both; white-space: nowrap;">REPUBLIQUE DU BENIN</p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+
+            <!-- Côté droit -->
+            <td style="width: 50%; vertical-align: top; text-align: right; margin-left: 20px;">
+                <table>
+                    <tr>
+                        <td style="text-align: right; vertical-align: top;">
+                            <p style="margin: 0; white-space: nowrap;">01 BP 36 Porto-Novo</p>
+                            <p style="margin: 0; white-space: nowrap;">Tel : 60939596</p>
+                            <p style="margin: 0; white-space: nowrap;">IFU : 6201000032106</p>
+                            <p style="margin: 0; white-space: nowrap;">Email : contactportonovo@mairie.bj</p>
+                        </td>
+                        <td style="vertical-align: top;">
+                            <img src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('images/LOGO_porto-novo.png'))) }}"
+                                style="height: 150px; width: auto; vertical-align: top; margin-top: -30px; margin-left: -30px;">
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
     @php
         use Carbon\Carbon;
         Carbon::setLocale('fr');
@@ -46,15 +91,16 @@
     <p style="text-indent: 2em; line-height: 2; text-align: justify;">Le sécrétaire Exécutif de la mairie de
         Cotonou autorise monsieur {{ $agent->nom_Agent }} {{ $agent->prenom_Agent }}, en poste
         {{ $agent->poste?->description_poste ?? 'Poste non défini' }}, bénéficiaire de l'attestation de non jouissance
-        des congés administratifs <span style="font-weight:bold;">n</span>° &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;du relative aux titres de congés
+        des congés administratifs <span style="font-weight:bold;">n</span>° &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;du relative
+        aux titres de congés
         administratifs :</p>
 
     @foreach ($anneesChoisies as $key => $annee)
         <p style="text-indent: 2em;">
             <span style="font-weight:bold;">- n°&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> du
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ $annee }}
-            @if ( $key < count($anneesChoisies) - 1 )
-                 et
+            @if ($key < count($anneesChoisies) - 1)
+                et
             @endif
         </p>
     @endforeach
