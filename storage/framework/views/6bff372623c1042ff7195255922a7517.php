@@ -8,10 +8,11 @@
     <title>HRManager</title>
     <?php echo app('Illuminate\Foundation\Vite')('resources/css/app.css'); ?>
     <?php echo app('Illuminate\Foundation\Vite')('resources/js/app.js'); ?>
+
 </head>
 
 <body
-    class="m-0 font-sans text-base antialiased font-normal dark:bg-slate-7è00 leading-default bg-gray-50 text-slate-600">
+    class="overflow-hidden m-0 font-sans text-base antialiased font-normal dark:bg-slate-7è00 leading-default bg-gray-50 text-slate-600">
     <div class="absolute w-full bg-[#5e72e4] dark:hidden min-h-75"></div>
     <!-- sidenav  -->
     <aside
@@ -25,14 +26,12 @@
                     alt="main_logo"  />
             </a>
         </div>
-
         <hr
             class="my-4 border-0 h-px mx-4 bg-gradient-to-r from-gray-100 via-black/60 to-gray-200 dark:from-transparent dark:via-white dark:to-transparent" />
-
         <div class=" items-center block w-auto max-h-screen h-sidenav grow basis-full">
             <ul class="flex flex-col pl-0 mb-0">
                 <li class="mt-0.5 w-full ">
-                    <a class="p-2 dark:text-white dark:opacity-80 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
+                    <a class="p-2 dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
                         href="<?php echo e(route('site')); ?>">
                         <div
                             class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center ">
@@ -47,12 +46,12 @@
                 </li>
 
                 <li class="mt-0.5 w-full">
-                    <a class="bg-[#5e72e4]/10 p-2 py-3 dark:text-white dark:opacity-80 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap rounded-lg px-4 font-semibold text-slate-700 transition-colors"
+                    <a class="p-2 dark:text-white dark:opacity-80 py-3 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
                         href="<?php echo e(route('liste')); ?>">
                         <div
                             class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center ">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                stroke-width="1.5" stroke="currentColor" class="size-6">
+                                stroke-width="1.5" stroke="currentColor" class="size-6 ">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
                             </svg>
@@ -61,7 +60,7 @@
                     </a>
                 </li>
                 <li class="mt-0.5 w-full">
-                    <a class="p-2 dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
+                    <a class="p-2 dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-color"
                         href="<?php echo e(route('afficher.fichier')); ?>">
                         <div
                             class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center ">
@@ -96,7 +95,7 @@
                         <div
                             class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center ">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                stroke-width="1.5" stroke="currentColor" class="size-6">
+                                stroke-width="1.5" stroke="currentColor" class="size-6 ">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M12 3.75v16.5M2.25 12h19.5M6.375 17.25a4.875 4.875 0 0 0 4.875-4.875V12m6.375 5.25a4.875 4.875 0 0 1-4.875-4.875V12m-9 8.25h16.5a1.5 1.5 0 0 0 1.5-1.5V5.25a1.5 1.5 0 0 0-1.5-1.5H3.75a1.5 1.5 0 0 0-1.5 1.5v13.5a1.5 1.5 0 0 0 1.5 1.5Zm12.621-9.44c-1.409 1.41-4.242 1.061-4.242 1.061s-.349-2.833 1.06-4.242a2.25 2.25 0 0 1 3.182 3.182ZM10.773 7.63c1.409 1.409 1.06 4.242 1.06 4.242S9 12.22 7.592 10.811a2.25 2.25 0 1 1 3.182-3.182Z" />
                             </svg>
@@ -104,7 +103,6 @@
                         <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Enregistrer les promotions</span>
                     </a>
                 </li>
-
                 <li class="mt-0.5 w-full">
                     <a class="p-2 dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
                         href="<?php echo e(route('Conges')); ?>">
@@ -121,7 +119,7 @@
                 </li>
 
                 <li class="mt-0.5 w-full">
-                    <a class="p-2 dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
+                    <a class="p-2 dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors "
                         href="<?php echo e(route('Services')); ?>">
                         <div
                             class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center ">
@@ -132,7 +130,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 6h.008v.008H6V6Z"   />
                             </svg>
                         </div>
-                        <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Gestion des services</span>
+                        <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Gestion des structures</span>
                     </a>
                 </li>
                 <li class="mt-0.5 w-full">
@@ -202,15 +200,17 @@
                         </li>
                     <?php endif; ?>
                 <?php endif; ?>
+
             </ul>
         </div>
     </aside>
 
     <!-- end sidenav -->
 
-    <main class="relative h-full max-h-screen transition-all duration-200 ease-in-out xl:ml-68 rounded-xl">
+    <main
+        class="overflow-y-scroll relative h-full max-h-screen transition-all duration-200 ease-in-out xl:ml-68 rounded-xl">
         <!-- Navbar -->
-        <nav class="relative flex flex-wrap items-center justify-between px-0 py-2 mx-6 transition-all ease-in shadow-none duration-250 rounded-2xl lg:flex-nowrap lg:justify-start"
+        <nav class="relative flex flex-wrap items-center justify-between px-0  py-2 mx-6 transition-all ease-in shadow-none duration-250 rounded-2xl lg:flex-nowrap lg:justify-start"
             navbar-main navbar-scroll="false">
             <div class="flex items-center justify-between w-full px-4 py-1 mx-auto flex-wrap-inherit">
                 <nav>
@@ -220,9 +220,9 @@
                             <a class="text-white opacity-50" href="javascript:;">Pages</a>
                         </li>
                         <li class="text-sm pl-2 capitalize leading-normal text-white before:float-left before:pr-2 before:text-white before:content-['/']"
-                            aria-current="page">Personnel</li>
+                            aria-current="page">Absences</li>
                     </ol>
-                    <h6 class="mb-0 font-bold text-white capitalize">Personnel</h6>
+                    <h6 class="mb-0 font-bold text-white capitalize">Absences</h6>
                 </nav>
 
                 <div class="flex items-center mt-2 grow sm:mt-0 sm:mr-6 md:mr-0 lg:flex lg:basis-auto">
@@ -323,142 +323,66 @@
                 <ul id="resultsList" class="hover:text-gray-700"></ul>
             </div>
         </div>
-        <div class=" mx-5 bg-white shadow-xl rounded-2xl mt-12 pt-5 ">
-            <div class="rounded-t-lg text-center flex justify-between mx-5 text-lg font-bold ">
-                <h3>Liste des agents actifs</h3>
-                <div>
-                    <a href="<?php echo e(route('agents.actifs.pdf')); ?>"><svg xmlns="http://www.w3.org/2000/svg"
-                            fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                            class="size-6 text-green-500 hover:scale-110 mr-5">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m.75 12 3 3m0 0 3-3m-3 3v-6m-1.5-9H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
-                        </svg> </a>
+        <div class="mx-20 my-20  flex items-center justify-center p-4">
+            <div class="relative bg-white rounded-2xl shadow-lg p-8 pt-16 max-w-xl w-full text-center">
 
+                <!-- Cercle photo / logo -->
+                <div class="absolute -top-12 left-1/2 transform -translate-x-1/2">
+                    <div
+                        class="w-40 h-40 rounded-full bg-gray-100 border- border-white shadow-md flex items-center justify-center">
+                        <!-- Icône utilisateur par défaut -->
+                        <svg class="w-25 h-25 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M5.121 17.804A7 7 0 0112 15a7 7 0 016.879 2.804M12 7a4 4 0 110-8 4 4 0 010 8z" />
+                        </svg>
+                    </div>
                 </div>
-            </div>
-            <div class="bg-white p-4 shadow-lg ">
-                <table class="min-w-full divide-y divide-gray-200">
-                    <thead class="font-bold">
-                        <th class=" text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                        </th>
-                        <th class="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                            Matricule</th>
-                        <th class="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                            Nom</th>
-                        <th class="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                            Prenom</th>
-                        <th class="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                            Poste</th>
-                        <th class="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                            Grade actuel</th>
 
-                    </thead>
-                    <?php if($agents->count() > 0): ?>
-                        <?php $__currentLoopData = $agents; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $agent): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <tbody class="divide-y divide-gray-200">
-                                <tr class="">
-                                    <td class=" whitespace-nowrap text-sm text-gray-900">
-                                        <img src="<?php echo e(asset('storage/' . $agent->photo_profil_Agent)); ?>"
-                                            class="inline-flex items-center justify-center mr-4 text-sm text-white transition-all duration-200 ease-in-out h-9 w-9 rounded-xl"
-                                            alt="user1" />
-                                    </td>
-                                    <td class="px-3 py-3 whitespace-nowrap text-sm text-gray-900">
-                                        <?php echo e($agent->matricule_Agent); ?></td>
-                                    <td class="px-3 py-3 whitespace-nowrap text-sm text-gray-900">
-                                        <?php echo e($agent->nom_Agent); ?></td>
-                                    <td class="px-3 py-3 whitespace-nowrap text-sm text-gray-900">
-                                        <?php echo e($agent->prenom_Agent); ?></td>
-                                    <td class="px-3 py-3 text-sm text-left text-green-600"><span
-                                            class="inline break-word"><?php echo e($agent->poste ? $agent->poste->libelle_poste : 'Aucun service'); ?></span></td>
-                                    <td class="px-3 py-3 text-sm text-left text-green-600"><span
-                                            class="inline break-word">
-                                                <p
-                                                    class="">
-                                                    Catégorie <span
-                                                        class="font-semibold text-blue-600"><?php echo e($agent->categorie); ?></span>,
-                                                    Classe <span
-                                                        class="font-semibold text-green-600"><?php echo e($agent->classe); ?></span>,
-                                                    Échelon <span
-                                                        class="font-semibold text-purple-600"><?php echo e($agent->echelon); ?></span>
-                                                </p>
-                                            </span></td>
-
-                                </tr>
-                            </tbody>
-                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                    <?php else: ?>
-                        <span>Aucun enregisrement dans la base de donné</span>
-                    <?php endif; ?>
-                </table>
-            </div>
-            <div id="overlay" class="fixed inset-0 bg-gray-600 opacity-50 hidden"></div>
-            <?php if($errors->any()): ?>
-                <div class="alert alert-danger text-red-500">
-                    <ul>
-                        <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <li><?php echo e($error); ?></li>
-                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                    </ul>
+                <!-- Boutons haut gauche/droite -->
+                <div class="absolute top-4 left-4 text-pink-600 flex items-center gap-1 text-sm">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M13 7H7v6h6V7z" />
+                    </svg>
+                    <span>Connect</span>
                 </div>
-            <?php endif; ?>
 
+                <div class="absolute top-4 right-4 text-pink-400 flex items-center gap-1 text-sm">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M2 5a2 2 0 012-2h12a2 2 0 012 2v9a2 2 0 01-2 2h-3l-4 3v-3H4a2 2 0 01-2-2V5z" />
+                    </svg>
+                    <span>Message</span>
+                </div>
+
+                <!-- Nom & Infos -->
+                <h2 class="text-xl mt-16 font-semibold font-mono text-gray-800 mt-4"><?php echo e($user->nom_complet); ?></h2>
+                <p class="text-sm text-gray-500"><?php echo e($user->getRoleNames()->first()); ?></p>
+                <p class="text-xs text-gray-400 mt-1"><?php echo e($user->email); ?></p>
+                <p class="text-xs text-gray-400 mt-1">Mairie de Porto-Novo</p>
+                
+            </div>
         </div>
+
+
+        <script>
+            function toggleMenu() {
+                const menu = document.querySelector('aside');
+                const isExpanded = menu.getAttribute('aria-expanded') === 'true';
+
+                // Alterner l'état de aria-expanded
+                menu.setAttribute('aria-expanded', !isExpanded);
+
+                // Ajouter/retirer la classe de translation pour ouvrir/fermer le menu
+                if (isExpanded) {
+                    menu.classList.add('-translate-x-full');
+
+                    menu.classList.remove('translate-x-0', 'ml-10');
+
+                } else {
+                    menu.classList.remove('-translate-x-full');
+                    menu.classList.add('translate-x-0', 'ml-10');
+                }
+            }
+        </script>
     </main>
-
-
-    <script>
-        function toggleMenu() {
-            const menu = document.querySelector('aside');
-            const isExpanded = menu.getAttribute('aria-expanded') === 'true';
-
-            // Alterner l'état de aria-expanded
-            menu.setAttribute('aria-expanded', !isExpanded);
-
-            // Ajouter/retirer la classe de translation pour ouvrir/fermer le menu
-            if (isExpanded) {
-                menu.classList.add('-translate-x-full');
-
-                menu.classList.remove('translate-x-0', 'ml-10');
-
-            } else {
-                menu.classList.remove('-translate-x-full');
-                menu.classList.add('translate-x-0', 'ml-10');
-            }
-        }
-    </script>
-    <script>
-        const formulaire = document.getElementById('formulaire')
-        const ajout = document.getElementById('boutton_ajout')
-        const fermer = document.getElementById('fermer')
-        const overlay = document.getElementById('overlay')
-
-        ajout.addEventListener("click", () => {
-            event.preventDefault();
-            formulaire.classList.remove("hidden");
-            overlay.classList.remove("hidden");
-            setTimeout(() => {
-                formulaire.classList.remove('scale-0');
-                formulaire.classList.add('scale-100');
-            }, 50);
-        })
-
-        fermer.addEventListener("click", () => {
-            formulaire.classList.remove('scale-100');
-            formulaire.classList.add('scale-0');
-            setTimeout(() => {
-                formulaire.classList.add('hidden');
-                overlay.classList.add('hidden');
-            }, 300);
-        });
-
-
-        document.addEventListener('keydown', function(event) {
-            if (event.key === "Enter") {
-                event.preventDefault();
-            }
-        });
-    </script>
-
-
-</body>
-<?php /**PATH C:\Users\Sarah\Downloads\MyProject\resources\views/agentsactifs.blade.php ENDPATH**/ ?>
+</body><?php /**PATH C:\Users\Sarah\Downloads\MyProject\resources\views/afficherProfil.blade.php ENDPATH**/ ?>

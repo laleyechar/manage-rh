@@ -136,7 +136,7 @@
                             </svg>
                         </div>
                         <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Gestion des
-                            services</span>
+                            structures</span>
                     </a>
                 </li>
                 <li class="mt-0.5 w-full">
@@ -357,7 +357,7 @@
         <?php endif; ?>
         <div class="p-6 bg-white rounded-lg shadow-md mt-10 mr-5 ml-5">
             <div class="flex justify-between items-center mb-4">
-                <h2 class="text-2xl font-bold text-gray-700">Liste des services</h2>
+                <h2 class="text-2xl font-bold text-gray-700">Liste des structures</h2>
                 <a href="" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md"
                     id="btn_ajout">
                     + Ajouter
@@ -463,7 +463,7 @@
                                                 <tr>
                                                     <td colspan="3"
                                                         class="px-6 py-3 text-center text-sm text-gray-500">
-                                                        Aucun poste pour ce service.
+                                                        Aucun poste pour cette structure.
                                                     </td>
                                                 </tr>
                                             <?php endif; ?>
@@ -490,7 +490,7 @@
             <form action="<?php echo e(route('creerService')); ?>" method="POST"
                 class="relative bg-white rounded-lg p-10 max-h-[80vh] max-w-full w-full sm:w-[30em] lg:w-[40em] overflow-auto">
                 <?php echo csrf_field(); ?>
-                <h2 class="text-2xl font-bold mb-6 text-center text-gray-700">Ajouter un service</h2>
+                <h2 class="text-2xl font-bold mb-6 text-center text-gray-700">Ajouter une structure</h2>
                 <button type="button" id="fermerformService"
                     class="absolute top-2 right-2 text-red-500 hover:text-gray-800 text-xl font-bold">
                     &times;

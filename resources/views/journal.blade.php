@@ -5,11 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" type="image/png" href="{{ asset('images/icone[1].png')}}" />
+    <link rel="icon" type="image/png" href="{{ asset('images/icone[1].png') }}" />
     <title>HRManager</title>
     @vite('resources/css/app.css')
     @vite('resources/js/app.js')
-
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <style>
+        [x-cloak] {
+            display: none !important;
+        }
+    </style>
 
 </head>
 
@@ -89,7 +94,8 @@
                                     d="M6 6.878V6a2.25 2.25 0 0 1 2.25-2.25h7.5A2.25 2.25 0 0 1 18 6v.878m-12 0c.235-.083.487-.128.75-.128h10.5c.263 0 .515.045.75.128m-12 0A2.25 2.25 0 0 0 4.5 9v.878m13.5-3A2.25 2.25 0 0 1 19.5 9v.878m0 0a2.246 2.246 0 0 0-.75-.128H5.25c-.263 0-.515.045-.75.128m15 0A2.25 2.25 0 0 1 21 12v6a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 18v-6c0-.98.626-1.813 1.5-2.122" />
                             </svg>
                         </div>
-                        <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Planification des formations</span>
+                        <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Planification des
+                            formations</span>
                     </a>
                 </li>
 
@@ -104,7 +110,8 @@
                                     d="M12 3.75v16.5M2.25 12h19.5M6.375 17.25a4.875 4.875 0 0 0 4.875-4.875V12m6.375 5.25a4.875 4.875 0 0 1-4.875-4.875V12m-9 8.25h16.5a1.5 1.5 0 0 0 1.5-1.5V5.25a1.5 1.5 0 0 0-1.5-1.5H3.75a1.5 1.5 0 0 0-1.5 1.5v13.5a1.5 1.5 0 0 0 1.5 1.5Zm12.621-9.44c-1.409 1.41-4.242 1.061-4.242 1.061s-.349-2.833 1.06-4.242a2.25 2.25 0 0 1 3.182 3.182ZM10.773 7.63c1.409 1.409 1.06 4.242 1.06 4.242S9 12.22 7.592 10.811a2.25 2.25 0 1 1 3.182-3.182Z" />
                             </svg>
                         </div>
-                        <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Enregistrer les promotions</span>
+                        <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Enregistrer les
+                            promotions</span>
                     </a>
                 </li>
 
@@ -135,7 +142,8 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 6h.008v.008H6V6Z"   />
                             </svg>
                         </div>
-                        <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Gestion des services</span>
+                        <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Gestion des
+                            structures</span>
                     </a>
                 </li>
                 <li class="mt-0.5 w-full">
@@ -211,7 +219,8 @@
 
     <!-- end sidenav -->
 
-    <main class="overflow-y-scroll relative h-full max-h-screen transition-all duration-200 ease-in-out xl:ml-68 rounded-xl">
+    <main
+        class="overflow-y-scroll relative h-full max-h-screen transition-all duration-200 ease-in-out xl:ml-68 rounded-xl">
         <!-- Navbar -->
         <nav class="relative flex flex-wrap items-center justify-between px-0 py-2 mx-6 transition-all ease-in shadow-none duration-250 rounded-2xl lg:flex-nowrap lg:justify-start"
             navbar-main navbar-scroll="false">
@@ -339,7 +348,7 @@
                             <th scope="col" class="px-6 py-3">Email</th>
                             <th scope="col" class="px-6 py-3">Type de Compte</th>
                             <th scope="col" class="px-6 py-3">A consulté</th>
-                            <th scope="col" class="px-6 py-3">Détails</th>
+                            {{-- <th scope="col" class="px-6 py-3">Détails</th> --}}
                             <th scope="col" class="px-6 py-3">Date et Heure</th>
                         </tr>
                     </thead>
@@ -347,11 +356,18 @@
                         @foreach ($activityLogs as $log)
                             <tr
                                 class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700 border-gray-200  searchable-row">
-                                <td class="px-6 py-4">{{ $log->user->nom_complet }}</td>
+                                <td class="px-6 py-4">{{ $log->user->agent->nom_agent ?? 'N/A' }} {{ $log->user->agent->prenom_agent ?? 'N/A' }} </td>
                                 <td class="px-6 py-4">{{ $log->user->email }}</td>
                                 <td class="px-6 py-4">{{ $log->user_type }}</td>
-                                <td class="px-6 py-4">{{ $log->action }}</td>
-                                <td class="px-6 py-4">{{ $log->details }}</td>
+                                <td class="px-6 py-4" x-data="{ open: false }">{{ $log->action }}
+                                    <button @click="open = !open"  class="cursor-pointer text-blue-600 underline ml-2">
+                                        Voir détails
+                                    </button>
+                                    <p x-show="open" x-cloak x-transition.duration.500ms class="mt-2 text-gray-600">
+                                        {{ $log->details }}</p>
+
+                                </td>
+                                {{-- <td class="px-6 py-4">{{ $log->details }}</td> --}}
                                 <td class="px-6 py-4">{{ $log->created_at }}</td>
                             </tr>
                         @endforeach

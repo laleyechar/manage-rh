@@ -136,7 +136,7 @@
                             </svg>
                         </div>
                         <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Gestion des
-                            services</span>
+                            structures</span>
                     </a>
                 </li>
                 <li class="mt-0.5 w-full">
@@ -370,7 +370,7 @@
                             <th class="pl-10 py-2">Libellé</th>
                             <th class=" py-2">Description</th>
                             <th class=" py-2">Occupant</th>
-                            <th class=" py-2">Service</th>
+                            <th class=" py-2">Structures</th>
                             <th class=" py-2"></th>
 
 
@@ -458,7 +458,7 @@
                 </div>
                 <select name="service_id" required
                     class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 text-gray-700 text-sm">
-                    <option value="">-- Choisir un service --</option>
+                    <option value="">-- Choisir une structure --</option>
                     @foreach ($services as $service)
                         <option value="{{ $service->id }}">{{ $service->libelle }}</option>
                     @endforeach
@@ -505,7 +505,7 @@
                         </div>
                         <select name="service_id" required
                             class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 text-gray-700 text-sm">
-                            <option value="">-- Choisir un service --</option>
+                            <option value="">-- Choisir une structure --</option>
                             @foreach ($services as $service)
                                 <option value="{{ $service->id }}"
                                     {{ $poste->service_id == $service->id ? 'selected' : '' }}>

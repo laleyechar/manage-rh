@@ -131,7 +131,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 6h.008v.008H6V6Z"   />
                             </svg>
                         </div>
-                        <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Gestion des services</span>
+                        <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Gestion des structures</span>
                     </a>
                 </li>
                 <li class="mt-0.5 w-full">

@@ -19,7 +19,7 @@ class ActivityController extends Controller
     public function showActivityLog()
     {
         // Récupérer les logs d'activité, triés par date
-        $activityLogs = Journal::with('user')->orderBy('created_at', 'desc')->get();
+        $activityLogs = Journal::with('user.agent')->orderBy('created_at', 'desc')->get();
         
         // Passer les logs à la vue 'journal'
         return view('journal', compact('activityLogs'));

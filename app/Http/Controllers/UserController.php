@@ -17,15 +17,18 @@ class UserController extends Controller
     // Afficher la liste des utilisateurs
     public function index()
     {
-        $users = User::all(); // Récupère tous les utilisateurs
-        return view('index', compact('users'));
+        $users = User::all(); 
+        $agents = Agent::all();// Récupère tous les utilisateurs
+        return view('index', compact('users', 'agents'));
     }
 
     // Afficher le formulaire de création d'utilisateur
     public function create()
     {
-        $roles = Role::all(); // Récupère tous les rôles
-        return view('create', compact('roles'));
+        $roles = Role::all();
+        $users = User::all(); 
+        $agents = Agent::all(); // Récupère tous les rôles
+        return view('create', compact('roles', 'users', 'agents'));
     }
 
     // Créer un nouvel utilisateur

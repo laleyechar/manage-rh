@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="{{ asset('images/icone[1].png')}}" />
+    <link rel="icon" type="image/png" href="{{ asset('images/icone[1].png') }}" />
     <title>HRManager</title>
     @vite('resources/css/app.css')
     @vite('resources/js/app.js')
@@ -88,7 +88,8 @@
                                     d="M6 6.878V6a2.25 2.25 0 0 1 2.25-2.25h7.5A2.25 2.25 0 0 1 18 6v.878m-12 0c.235-.083.487-.128.75-.128h10.5c.263 0 .515.045.75.128m-12 0A2.25 2.25 0 0 0 4.5 9v.878m13.5-3A2.25 2.25 0 0 1 19.5 9v.878m0 0a2.246 2.246 0 0 0-.75-.128H5.25c-.263 0-.515.045-.75.128m15 0A2.25 2.25 0 0 1 21 12v6a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 18v-6c0-.98.626-1.813 1.5-2.122" />
                             </svg>
                         </div>
-                        <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Planification des formations</span>
+                        <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Planification des
+                            formations</span>
                     </a>
                 </li>
 
@@ -103,7 +104,8 @@
                                     d="M12 3.75v16.5M2.25 12h19.5M6.375 17.25a4.875 4.875 0 0 0 4.875-4.875V12m6.375 5.25a4.875 4.875 0 0 1-4.875-4.875V12m-9 8.25h16.5a1.5 1.5 0 0 0 1.5-1.5V5.25a1.5 1.5 0 0 0-1.5-1.5H3.75a1.5 1.5 0 0 0-1.5 1.5v13.5a1.5 1.5 0 0 0 1.5 1.5Zm12.621-9.44c-1.409 1.41-4.242 1.061-4.242 1.061s-.349-2.833 1.06-4.242a2.25 2.25 0 0 1 3.182 3.182ZM10.773 7.63c1.409 1.409 1.06 4.242 1.06 4.242S9 12.22 7.592 10.811a2.25 2.25 0 1 1 3.182-3.182Z" />
                             </svg>
                         </div>
-                        <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Enregistrer les promotions</span>
+                        <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Enregistrer les
+                            promotions</span>
                     </a>
                 </li>
 
@@ -134,7 +136,8 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 6h.008v.008H6V6Z"   />
                             </svg>
                         </div>
-                        <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Gestion des services</span>
+                        <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Gestion des
+                            structures</span>
                     </a>
                 </li>
                 <li class="mt-0.5 w-full">
@@ -351,88 +354,91 @@
                                         </p>
                                     </div>
                                     <div class="grid gap-2">
-                                        <label for="nom" class="text-sm font-semibold leading-none">Nom de l'agent</label>
-                                        <input name="nom" id="nom" type="text"
-                                            placeholder="Doe" readonly
-                                            class="flex h-9 w-full rounded-md border border-gray-300 bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50" />
-                                    </div>
-                                    <div class="grid gap-2">
-                                        <label for="prenom" class="text-sm font-semibold leading-none">Prénom de l'agent</label>
-                                        <input name="prenom" id="prenom" type="text"
-                                            placeholder="John" required
-                                            class="flex h-9 w-full rounded-md border border-gray-300 bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50" />
-                                    </div>
-                                    <div class="grid gap-2">
-                                        <label for="email" class="text-sm font-semibold leading-none">Email</label>
-                                        <input name="email" id="email" type="email"
-                                            placeholder="m@example.com" required
-                                            class="flex h-9 w-full rounded-md border border-gray-300 bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50" />
-                                    </div>
-                                    <div class="grid gap-2">
-                                        <label for="role" class="text-sm font-semibold leading-none">Entrer le
-                                            rôle</label>
-                                        <select name="role" id="role" required
-                                            class="flex h-9 w-full rounded-md border border-gray-300 bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50">
-                                            @foreach ($roles as $role)
-                                                <option value="{{ $role->name }}">{{ $role->name }}</option>
+                                        <label for="agent_id" class="text-sm font-semibold">Agent</label>
+                                        <select id="agent_id" name="agent_id" required
+                                            class="flex h-9 w-full rounded-md border border-gray-300 px-3 py-1 text-sm">
+                                            <option value="">-- Sélectionner un agent --</option>
+                                            @foreach ($agents as $agent)
+                                                <option value="{{ $agent->id }}" class="rounded-md"
+                                                    {{ isset($user) && $user->agent_id == $agent->id ? 'selected' : '' }}>
+                                                    {{ $agent->nom_Agent }} - {{ $agent->prenom_Agent }}
+                                                </option>
                                             @endforeach
                                         </select>
                                     </div>
-                                    <div class="grid gap-2">
-                                        <div class="flex items-center">
-                                            <label for="password" class="text-sm font-semibold leading-none">Entrer
-                                                votre mot de passe</label>
-                                            {{-- <a href="#" class="ml-auto text-sm underline-offset-2 hover:underline">
+                                        <div class="grid gap-2">
+                                            <label for="email"
+                                                class="text-sm font-semibold leading-none">Email</label>
+                                            <input name="email" id="email" type="email"
+                                                placeholder="m@example.com" required
+                                                class="flex h-9 w-full rounded-md border border-gray-300 bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50" />
+                                        </div>
+                                        <div class="grid gap-2">
+                                            <label for="role" class="text-sm font-semibold leading-none">Entrer le
+                                                rôle</label>
+                                            <select name="role" id="role" required
+                                                class="flex h-9 w-full rounded-md border border-gray-300 bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50">
+                                                @foreach ($roles as $role)
+                                                    <option value="{{ $role->name }}">{{ $role->name }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                        <div class="grid gap-2">
+                                            <div class="flex items-center">
+                                                <label for="password"
+                                                    class="text-sm font-semibold leading-none">Entrer
+                                                    votre mot de passe</label>
+                                                {{-- <a href="#" class="ml-auto text-sm underline-offset-2 hover:underline">
                                                 Mot de passe oublier ?
                                             </a> --}}
+                                            </div>
+                                            <input name="password" id="password" type="password" required
+                                                class="flex h-9 w-full rounded-md border border-gray-300 bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50" />
                                         </div>
-                                        <input name="password" id="password" type="password" required
-                                            class="flex h-9 w-full rounded-md border border-gray-300 bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50" />
-                                    </div>
-                                    <div class="grid gap-2">
-                                        <div class="flex items-center">
-                                            <label for="password_confirmation"
-                                                class="text-sm font-semibold leading-none">Confirmer votre mot de
-                                                passe</label>
-                                            {{-- <a href="#" class="ml-auto text-sm underline-offset-2 hover:underline">
+                                        <div class="grid gap-2">
+                                            <div class="flex items-center">
+                                                <label for="password_confirmation"
+                                                    class="text-sm font-semibold leading-none">Confirmer votre mot de
+                                                    passe</label>
+                                                {{-- <a href="#" class="ml-auto text-sm underline-offset-2 hover:underline">
                                                 Mot de passe oublier ?
                                             </a> --}}
+                                            </div>
+                                            <input name="password_confirmation" type="password" required
+                                                class="flex h-9 w-full rounded-md border border-gray-300 bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50" />
                                         </div>
-                                        <input name="password_confirmation" type="password" required
-                                            class="flex h-9 w-full rounded-md border border-gray-300 bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50" />
+                                        <button type="submit"
+                                            class="inline-flex h-9 items-center justify-center whitespace-nowrap rounded-md bg-[#5e72e4] text-white px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-[#5e72e4]/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 w-full">
+                                            Connexion
+                                        </button>
                                     </div>
-                                    <button type="submit"
-                                        class="inline-flex h-9 items-center justify-center whitespace-nowrap rounded-md bg-[#5e72e4] text-white px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-[#5e72e4]/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 w-full">
-                                        Connexion
-                                    </button>
-                                </div>
-                                <script>
-        function chargerAgentParMatricule() {
-            var matriculeAgent = document.getElementById('matricule_Agent').value;
+                                    <script>
+                                        function chargerAgentParMatricule() {
+                                            var matriculeAgent = document.getElementById('matricule_Agent').value;
 
-            if (matriculeAgent.length > 0) {
-                $.ajax({
-                    url: '/get-agent-by-matricule/' + matriculeAgent,
-                    method: 'GET',
-                    success: function(response) {
-                        if (response && response.poste) {
-                            document.getElementById('Ancien_poste').value = response.poste.libelle_poste || '';
-                        } else {
-                            document.getElementById('Ancien_poste').value = '';
-                            alert("Aucun poste trouvé pour cet agent.");
-                        }
-                    },
-                    error: function(xhr, status, error) {
-                        console.error("Erreur AJAX:", error);
-                        alert("Erreur lors de la récupération de l'agent.");
-                        document.getElementById('Ancien_poste').value = '';
-                    }
-                });
-            } else {
-                document.getElementById('Ancien_poste').value = '';
-            }
-        }
-    </script>
+                                            if (matriculeAgent.length > 0) {
+                                                $.ajax({
+                                                    url: '/get-agent-by-matricule/' + matriculeAgent,
+                                                    method: 'GET',
+                                                    success: function(response) {
+                                                        if (response && response.poste) {
+                                                            document.getElementById('Ancien_poste').value = response.poste.libelle_poste || '';
+                                                        } else {
+                                                            document.getElementById('Ancien_poste').value = '';
+                                                            alert("Aucun poste trouvé pour cet agent.");
+                                                        }
+                                                    },
+                                                    error: function(xhr, status, error) {
+                                                        console.error("Erreur AJAX:", error);
+                                                        alert("Erreur lors de la récupération de l'agent.");
+                                                        document.getElementById('Ancien_poste').value = '';
+                                                    }
+                                                });
+                                            } else {
+                                                document.getElementById('Ancien_poste').value = '';
+                                            }
+                                        }
+                                    </script>
                             </form>
                         </div>
                     </div>

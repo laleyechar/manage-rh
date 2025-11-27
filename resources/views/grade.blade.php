@@ -132,7 +132,7 @@
                             </svg>
                         </div>
                         <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Gestion des
-                            services</span>
+                            structures</span>
                     </a>
                 </li>
                 <li class="mt-0.5 w-full">

@@ -8,10 +8,11 @@
     <title>HRManager</title>
     <?php echo app('Illuminate\Foundation\Vite')('resources/css/app.css'); ?>
     <?php echo app('Illuminate\Foundation\Vite')('resources/js/app.js'); ?>
+
 </head>
 
 <body
-    class="m-0 font-sans text-base antialiased font-normal dark:bg-slate-7è00 leading-default bg-gray-50 text-slate-600">
+    class="overflow-hidden m-0 font-sans text-base antialiased font-normal dark:bg-slate-7è00 leading-default bg-gray-50 text-slate-600">
     <div class="absolute w-full bg-[#5e72e4] dark:hidden min-h-75"></div>
     <!-- sidenav  -->
     <aside
@@ -32,12 +33,12 @@
         <div class=" items-center block w-auto max-h-screen h-sidenav grow basis-full">
             <ul class="flex flex-col pl-0 mb-0">
                 <li class="mt-0.5 w-full ">
-                    <a class="p-2 dark:text-white dark:opacity-80 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
+                    <a class="p-2 dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
                         href="<?php echo e(route('site')); ?>">
                         <div
                             class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center ">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                stroke-width="1.5" stroke="currentColor" class="size-6">
+                                stroke-width="1.5" stroke="currentColor" class="size-6 ">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
                             </svg>
@@ -47,7 +48,7 @@
                 </li>
 
                 <li class="mt-0.5 w-full">
-                    <a class="bg-[#5e72e4]/10 p-2 py-3 dark:text-white dark:opacity-80 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap rounded-lg px-4 font-semibold text-slate-700 transition-colors"
+                    <a class="p-2 dark:text-white dark:opacity-80 py-3 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
                         href="<?php echo e(route('liste')); ?>">
                         <div
                             class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center ">
@@ -72,9 +73,10 @@
                             </svg>
 
                         </div>
-                        <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Gestion des sossiers</span>
+                        <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Gestion des dosiers</span>
                     </a>
                 </li>
+                <span class="text-xs text-slate-350 p-2">Evolution</span>
                 <li class="mt-0.5 w-full">
                     <a class="p-2 dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
                         href="<?php echo e(route('formations')); ?>">
@@ -86,7 +88,8 @@
                                     d="M6 6.878V6a2.25 2.25 0 0 1 2.25-2.25h7.5A2.25 2.25 0 0 1 18 6v.878m-12 0c.235-.083.487-.128.75-.128h10.5c.263 0 .515.045.75.128m-12 0A2.25 2.25 0 0 0 4.5 9v.878m13.5-3A2.25 2.25 0 0 1 19.5 9v.878m0 0a2.246 2.246 0 0 0-.75-.128H5.25c-.263 0-.515.045-.75.128m15 0A2.25 2.25 0 0 1 21 12v6a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 18v-6c0-.98.626-1.813 1.5-2.122" />
                             </svg>
                         </div>
-                        <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Planification des formations</span>
+                        <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Planification des
+                            formations</span>
                     </a>
                 </li>
 
@@ -96,12 +99,13 @@
                         <div
                             class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center ">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                stroke-width="1.5" stroke="currentColor" class="size-6  ">
+                                stroke-width="1.5" stroke="currentColor" class="size-6 ">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M12 3.75v16.5M2.25 12h19.5M6.375 17.25a4.875 4.875 0 0 0 4.875-4.875V12m6.375 5.25a4.875 4.875 0 0 1-4.875-4.875V12m-9 8.25h16.5a1.5 1.5 0 0 0 1.5-1.5V5.25a1.5 1.5 0 0 0-1.5-1.5H3.75a1.5 1.5 0 0 0-1.5 1.5v13.5a1.5 1.5 0 0 0 1.5 1.5Zm12.621-9.44c-1.409 1.41-4.242 1.061-4.242 1.061s-.349-2.833 1.06-4.242a2.25 2.25 0 0 1 3.182 3.182ZM10.773 7.63c1.409 1.409 1.06 4.242 1.06 4.242S9 12.22 7.592 10.811a2.25 2.25 0 1 1 3.182-3.182Z" />
                             </svg>
                         </div>
-                        <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Enregistrer les promotions</span>
+                        <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Enregistrer les
+                            promotions</span>
                     </a>
                 </li>
 
@@ -121,7 +125,7 @@
                 </li>
 
                 <li class="mt-0.5 w-full">
-                    <a class="p-2 dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
+                    <a class="p-2 dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors "
                         href="<?php echo e(route('Services')); ?>">
                         <div
                             class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center ">
@@ -132,7 +136,8 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 6h.008v.008H6V6Z"   />
                             </svg>
                         </div>
-                        <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Gestion des services</span>
+                        <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Gestion des
+                            structures</span>
                     </a>
                 </li>
                 <li class="mt-0.5 w-full">
@@ -202,15 +207,17 @@
                         </li>
                     <?php endif; ?>
                 <?php endif; ?>
+
             </ul>
         </div>
     </aside>
 
     <!-- end sidenav -->
 
-    <main class="relative h-full max-h-screen transition-all duration-200 ease-in-out xl:ml-68 rounded-xl">
+    <main
+        class="overflow-y-scroll relative h-full max-h-screen transition-all duration-200 ease-in-out xl:ml-68 rounded-xl">
         <!-- Navbar -->
-        <nav class="relative flex flex-wrap items-center justify-between px-0 py-2 mx-6 transition-all ease-in shadow-none duration-250 rounded-2xl lg:flex-nowrap lg:justify-start"
+        <nav class="relative flex flex-wrap items-center justify-between px-0  py-2 mx-6 transition-all ease-in shadow-none duration-250 rounded-2xl lg:flex-nowrap lg:justify-start"
             navbar-main navbar-scroll="false">
             <div class="flex items-center justify-between w-full px-4 py-1 mx-auto flex-wrap-inherit">
                 <nav>
@@ -220,9 +227,9 @@
                             <a class="text-white opacity-50" href="javascript:;">Pages</a>
                         </li>
                         <li class="text-sm pl-2 capitalize leading-normal text-white before:float-left before:pr-2 before:text-white before:content-['/']"
-                            aria-current="page">Personnel</li>
+                            aria-current="page">Absences</li>
                     </ol>
-                    <h6 class="mb-0 font-bold text-white capitalize">Personnel</h6>
+                    <h6 class="mb-0 font-bold text-white capitalize">Absences</h6>
                 </nav>
 
                 <div class="flex items-center mt-2 grow sm:mt-0 sm:mr-6 md:mr-0 lg:flex lg:basis-auto">
@@ -307,7 +314,7 @@
         </nav>
         <div id="overlayRecherche" class="fixed inset-0 bg-gray-600 opacity-50 hidden z-40"></div>
         <div id="barreSecond"
-            class="hidden fixed left-1/2 transform -translate-x-1/2 top-20 z-50 bg-white rounded-xl w-full max-w-xl h-full overflow-y-auto max-h-90 bg-white rounded-xl mt-7 z-50">
+            class="hidden fixed left-1/2 transform -translate-x-1/2 top-20 z-50 bg-white rounded-xl w-full max-w-xl  bg-white rounded-xl mt-7 z-50">
             <div class="flex  shadow-lg w-full">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" class="w-6 h-6 mt-2 ml-2 text-gray-600">
@@ -323,146 +330,137 @@
                 <ul id="resultsList" class="hover:text-gray-700"></ul>
             </div>
         </div>
-        <div class=" mx-5 bg-white shadow-xl rounded-2xl mt-12 pt-5 ">
-            <div class="rounded-t-lg text-center flex justify-between mx-5 text-lg font-bold ">
-                <h3>Liste des agents à la retraite</h3>
-                <div>
-                    <a href="<?php echo e(route('agents.retraites.pdf')); ?>"><svg xmlns="http://www.w3.org/2000/svg"
-                            fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                            class="size-6 text-green-500 hover:scale-110 mr-5">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m.75 12 3 3m0 0 3-3m-3 3v-6m-1.5-9H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
-                        </svg> </a>
+        <div class="flex min-h-screen flex-col items-center justify-center p-6 md:p-10">
+            <div class="w-full max-w-sm md:max-w-xl">
+                <div class="flex flex-col gap-6">
+                    <div class="overflow-hidden rounded-lg  bg-card text-card-foreground shadow-xl bg-white">
+                        <div class="">
+                            <form class="p-6 md:p-8" method="POST" action="<?php echo e(route('admin.users.store')); ?>">
+                                <?php echo csrf_field(); ?>
+                                <?php if($errors->any()): ?>
+                                    <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4" role="alert">
+                                        <p class="font-bold">Error</p>
+                                        <ul class="list-disc pl-5">
+                                            <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                <li><?php echo e($error); ?></li>
+                                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                        </ul>
+                                    </div>
+                                <?php endif; ?>
+                                <div class="flex flex-col gap-6">
+                                    <div class="flex flex-col items-center text-center">
+                                        <h1 class="text-2xl font-bold">Content de vous revoir</h1>
+                                        <p class="text-balance text-muted-foreground">Connectez-vous à votre compte.
+                                        </p>
+                                    </div>
+                                    <div class="grid gap-2">
+                                        <label for="agent_id" class="text-sm font-semibold">Agent</label>
+                                        <select id="agent_id" name="agent_id" required
+                                            class="flex h-9 w-full rounded-md border border-gray-300 px-3 py-1 text-sm">
+                                            <option value="">-- Sélectionner un agent --</option>
+                                            <?php $__currentLoopData = $agents; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $agent): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                <option value="<?php echo e($agent->id); ?>" class="rounded-md"
+                                                    <?php echo e(isset($user) && $user->agent_id == $agent->id ? 'selected' : ''); ?>>
+                                                    <?php echo e($agent->nom_Agent); ?> - <?php echo e($agent->prenom_Agent); ?>
 
+                                                </option>
+                                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                        </select>
+                                    </div>
+                                        <div class="grid gap-2">
+                                            <label for="email"
+                                                class="text-sm font-semibold leading-none">Email</label>
+                                            <input name="email" id="email" type="email"
+                                                placeholder="m@example.com" required
+                                                class="flex h-9 w-full rounded-md border border-gray-300 bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50" />
+                                        </div>
+                                        <div class="grid gap-2">
+                                            <label for="role" class="text-sm font-semibold leading-none">Entrer le
+                                                rôle</label>
+                                            <select name="role" id="role" required
+                                                class="flex h-9 w-full rounded-md border border-gray-300 bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50">
+                                                <?php $__currentLoopData = $roles; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $role): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                    <option value="<?php echo e($role->name); ?>"><?php echo e($role->name); ?></option>
+                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                            </select>
+                                        </div>
+                                        <div class="grid gap-2">
+                                            <div class="flex items-center">
+                                                <label for="password"
+                                                    class="text-sm font-semibold leading-none">Entrer
+                                                    votre mot de passe</label>
+                                                
+                                            </div>
+                                            <input name="password" id="password" type="password" required
+                                                class="flex h-9 w-full rounded-md border border-gray-300 bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50" />
+                                        </div>
+                                        <div class="grid gap-2">
+                                            <div class="flex items-center">
+                                                <label for="password_confirmation"
+                                                    class="text-sm font-semibold leading-none">Confirmer votre mot de
+                                                    passe</label>
+                                                
+                                            </div>
+                                            <input name="password_confirmation" type="password" required
+                                                class="flex h-9 w-full rounded-md border border-gray-300 bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50" />
+                                        </div>
+                                        <button type="submit"
+                                            class="inline-flex h-9 items-center justify-center whitespace-nowrap rounded-md bg-[#5e72e4] text-white px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-[#5e72e4]/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 w-full">
+                                            Connexion
+                                        </button>
+                                    </div>
+                                    <script>
+                                        function chargerAgentParMatricule() {
+                                            var matriculeAgent = document.getElementById('matricule_Agent').value;
+
+                                            if (matriculeAgent.length > 0) {
+                                                $.ajax({
+                                                    url: '/get-agent-by-matricule/' + matriculeAgent,
+                                                    method: 'GET',
+                                                    success: function(response) {
+                                                        if (response && response.poste) {
+                                                            document.getElementById('Ancien_poste').value = response.poste.libelle_poste || '';
+                                                        } else {
+                                                            document.getElementById('Ancien_poste').value = '';
+                                                            alert("Aucun poste trouvé pour cet agent.");
+                                                        }
+                                                    },
+                                                    error: function(xhr, status, error) {
+                                                        console.error("Erreur AJAX:", error);
+                                                        alert("Erreur lors de la récupération de l'agent.");
+                                                        document.getElementById('Ancien_poste').value = '';
+                                                    }
+                                                });
+                                            } else {
+                                                document.getElementById('Ancien_poste').value = '';
+                                            }
+                                        }
+                                    </script>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="bg-white p-4 shadow-lg ">
-                <table class="min-w-full divide-y divide-gray-200">
-                    <thead class="font-bold">
-                        <th class=" text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                        </th>
-                        <th class="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                            Matricule</th>
-                        <th class="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                            Nom</th>
-                        <th class="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                            Prenom</th>
-                        <th class="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                            Poste</th>
-                        <th class="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                            Grade actuel</th>
-                        <th class="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                            Date depart pour la retraite</th>
-
-                    </thead>
-                    <?php if($agents->count() > 0): ?>
-                        <?php $__currentLoopData = $agents; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $agent): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <tbody class="divide-y divide-gray-200">
-                                <tr class="">
-                                    <td class=" whitespace-nowrap text-sm text-gray-900">
-                                        <img src="<?php echo e(asset('storage/' . $agent->photo_profil_Agent)); ?>"
-                                            class="inline-flex items-center justify-center mr-4 text-sm text-white transition-all duration-200 ease-in-out h-9 w-9 rounded-xl"
-                                            alt="user1" />
-                                    </td>
-                                    <td class="px-3 py-3 whitespace-nowrap text-sm text-gray-900">
-                                        <?php echo e($agent->matricule_Agent); ?></td>
-                                    <td class="px-3 py-3 whitespace-nowrap text-sm text-gray-900">
-                                        <?php echo e($agent->nom_Agent); ?></td>
-                                    <td class="px-3 py-3 whitespace-nowrap text-sm text-gray-900">
-                                        <?php echo e($agent->prenom_Agent); ?></td>
-                                    <td class="px-3 py-3 text-sm text-left text-green-600"><span
-                                            class="inline break-word"><?php echo e($agent->poste ? $agent->poste->libelle_poste : 'Aucun poste'); ?></span></td>
-                                    <td class="px-3 py-3 text-sm text-left text-green-600"><span
-                                            class="inline break-word"> <p
-                                                    class="">
-                                                    Catégorie <span
-                                                        class="font-semibold text-blue-600"><?php echo e($agent->categorie); ?></span>,
-                                                    Classe <span
-                                                        class="font-semibold text-green-600"><?php echo e($agent->classe); ?></span>,
-                                                    Échelon <span
-                                                        class="font-semibold text-purple-600"><?php echo e($agent->echelon); ?></span>
-                                                </p> </span></td>
-                                    <td class="px-3 py-3 text-sm text-left text-green-600"><span
-                                            class="inline break-word"><?php echo e(\Carbon\Carbon::parse($agent->date_depart_retraite)->format('d/m/Y')); ?>
-
-                                        </span></td>
-
-                                </tr>
-                            </tbody>
-                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                    <?php else: ?>
-                        <span>Aucun enregisrement dans la base de donné</span>
-                    <?php endif; ?>
-                </table>
-            </div>
-            <div id="overlay" class="fixed inset-0 bg-gray-600 opacity-50 hidden"></div>
-            <?php if($errors->any()): ?>
-                <div class="alert alert-danger text-red-500">
-                    <ul>
-                        <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <li><?php echo e($error); ?></li>
-                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                    </ul>
-                </div>
-            <?php endif; ?>
-
         </div>
-    </main>
 
+        <script>
+            function toggleMenu() {
+                const menu = document.querySelector('aside');
+                const isExpanded = menu.getAttribute('aria-expanded') === 'true';
 
-    <script>
-        function toggleMenu() {
-            const menu = document.querySelector('aside');
-            const isExpanded = menu.getAttribute('aria-expanded') === 'true';
+                // Alterner l'état de aria-expanded
+                menu.setAttribute('aria-expanded', !isExpanded);
 
-            // Alterner l'état de aria-expanded
-            menu.setAttribute('aria-expanded', !isExpanded);
+                // Ajouter/retirer la classe de translation pour ouvrir/fermer le menu
+                if (isExpanded) {
+                    menu.classList.add('-translate-x-full');
 
-            // Ajouter/retirer la classe de translation pour ouvrir/fermer le menu
-            if (isExpanded) {
-                menu.classList.add('-translate-x-full');
+                    menu.classList.remove('translate-x-0', 'ml-10');
 
-                menu.classList.remove('translate-x-0', 'ml-10');
-
-            } else {
-                menu.classList.remove('-translate-x-full');
-                menu.classList.add('translate-x-0', 'ml-10');
+                } else {
+                    menu.classList.remove('-translate-x-full');
+                    menu.classList.add('translate-x-0', 'ml-10');
+                }
             }
-        }
-    </script>
-    <script>
-        const formulaire = document.getElementById('formulaire')
-        const ajout = document.getElementById('boutton_ajout')
-        const fermer = document.getElementById('fermer')
-        const overlay = document.getElementById('overlay')
-
-        ajout.addEventListener("click", () => {
-            event.preventDefault();
-            formulaire.classList.remove("hidden");
-            overlay.classList.remove("hidden");
-            setTimeout(() => {
-                formulaire.classList.remove('scale-0');
-                formulaire.classList.add('scale-100');
-            }, 50);
-        })
-
-        fermer.addEventListener("click", () => {
-            formulaire.classList.remove('scale-100');
-            formulaire.classList.add('scale-0');
-            setTimeout(() => {
-                formulaire.classList.add('hidden');
-                overlay.classList.add('hidden');
-            }, 300);
-        });
-
-
-        document.addEventListener('keydown', function(event) {
-            if (event.key === "Enter") {
-                event.preventDefault();
-            }
-        });
-    </script>
-
-
-</body>
-<?php /**PATH C:\Users\Sarah\Downloads\MyProject\resources\views/agentsretraites.blade.php ENDPATH**/ ?>
+        </script>
+<?php /**PATH C:\Users\Sarah\Downloads\MyProject\resources\views/create.blade.php ENDPATH**/ ?>

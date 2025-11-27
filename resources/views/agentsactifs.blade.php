@@ -132,7 +132,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 6h.008v.008H6V6Z"   />
                             </svg>
                         </div>
-                        <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Gestion des services</span>
+                        <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Gestion des structures</span>
                     </a>
                 </li>
                 <li class="mt-0.5 w-full">
@@ -369,7 +369,7 @@
                                     <td class="px-3 py-3 whitespace-nowrap text-sm text-gray-900">
                                         {{ $agent->prenom_Agent }}</td>
                                     <td class="px-3 py-3 text-sm text-left text-green-600"><span
-                                            class="inline break-word">{{ $agent->poste ? $agent->poste->libelle_poste : 'Aucun service' }}</span></td>
+                                            class="inline break-word">{{ $agent->poste ? $agent->poste->libelle_poste : 'Aucune structure' }}</span></td>
                                     <td class="px-3 py-3 text-sm text-left text-green-600"><span
                                             class="inline break-word">
                                                 <p

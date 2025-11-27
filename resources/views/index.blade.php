@@ -136,7 +136,7 @@
                             </svg>
                         </div>
                         <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Gestion des
-                            services</span>
+                            structures</span>
                     </a>
                 </li>
                 <li class="mt-0.5 w-full">
@@ -420,61 +420,62 @@
                         <div class="flex flex-col gap-6 pt-10">
                             <!-- Nom complet -->
                             <div class="grid gap-2">
-                                <label for="nom" class="text-sm font-semibold">Nom </label>
-                                <input name="nom" id="nom_edit{{ $user->id }}" type="text"
-                                    placeholder="Doe John" required
-                                    class="flex h-9 w-full rounded-md border border-gray-300 px-3 py-1 text-sm" />
-                            </div>
-                            <div class="grid gap-2">
-                                <label for="prenom" class="text-sm font-semibold">Nom </label>
-                                <input name="prenom" id="prenom_edit{{ $user->id }}" type="text"
-                                    placeholder="Doe John" required
-                                    class="flex h-9 w-full rounded-md border border-gray-300 px-3 py-1 text-sm" />
-                            </div>
-
-                            <!-- Email -->
-                            <div class="grid gap-2">
-                                <label for="email" class="text-sm font-semibold">Email</label>
-                                <input name="email" id="email_edit{{ $user->id }}" type="email"
-                                    placeholder="m@example.com" required
-                                    class="flex h-9 w-full rounded-md border border-gray-300 px-3 py-1 text-sm" />
-                            </div>
-
-                            <!-- Rôle -->
-                            <div class="grid gap-2">
-                                <label for="role" class="text-sm font-semibold">Rôle</label>
-                                <select id="role_edit{{ $user->id }}" name="role" required
+                                <label for="agent_id" class="text-sm font-semibold">Agent</label>
+                                <select id="agent_id" name="agent_id" required
                                     class="flex h-9 w-full rounded-md border border-gray-300 px-3 py-1 text-sm">
-                                    <option value="admin" {{ $user->hasRole('admin') ? 'selected' : '' }}>Admin
-                                    </option>
-                                    <option value="manager" {{ $user->hasRole('manager') ? 'selected' : '' }}>
-                                        Manager</option>
-                                    <option value="user" {{ $user->hasRole('user') ? 'selected' : '' }}>User
-                                    </option>
+                                    <option value="">-- Sélectionner un agent --</option>
+                                    @foreach ($agents as $agent)
+                                        <option value="{{ $agent->id }}"
+                                            {{ isset($user) && $user->agent_id == $agent->id ? 'selected' : '' }}>
+                                            {{ $agent->nom_complet }} - {{ $agent->email }}
+                                        </option>
+                                    @endforeach
                                 </select>
                             </div>
 
-                            <!-- Mot de passe -->
-                            <div class="grid gap-2">
-                                <label for="password" class="text-sm font-semibold">Mot de passe</label>
-                                <input name="password" id="password{{ $user->id }}" type="password"
-                                    class="flex h-9 w-full rounded-md border border-gray-300 px-3 py-1 text-sm" />
-                            </div>
+                                <!-- Email -->
+                                <div class="grid gap-2">
+                                    <label for="email" class="text-sm font-semibold">Email</label>
+                                    <input name="email" id="email_edit{{ $user->id }}" type="email"
+                                        placeholder="m@example.com" required
+                                        class="flex h-9 w-full rounded-md border border-gray-300 px-3 py-1 text-sm" />
+                                </div>
 
-                            <!-- Confirmation -->
-                            <div class="grid gap-2">
-                                <label for="password_confirmation" class="text-sm font-semibold">Confirmer mot de
-                                    passe</label>
-                                <input name="password_confirmation" type="password"
-                                    class="flex h-9 w-full rounded-md border border-gray-300 px-3 py-1 text-sm" />
-                            </div>
+                                <!-- Rôle -->
+                                <div class="grid gap-2">
+                                    <label for="role" class="text-sm font-semibold">Rôle</label>
+                                    <select id="role_edit{{ $user->id }}" name="role" required
+                                        class="flex h-9 w-full rounded-md border border-gray-300 px-3 py-1 text-sm">
+                                        <option value="admin" {{ $user->hasRole('admin') ? 'selected' : '' }}>Admin
+                                        </option>
+                                        <option value="manager" {{ $user->hasRole('manager') ? 'selected' : '' }}>
+                                            Manager</option>
+                                        <option value="user" {{ $user->hasRole('user') ? 'selected' : '' }}>User
+                                        </option>
+                                    </select>
+                                </div>
 
-                            <!-- Submit -->
-                            <button type="submit"
-                                class="h-9 rounded-md bg-[#5e72e4] text-white px-4 py-2 text-sm hover:bg-[#5e72e4]/90">
-                                Mettre à jour
-                            </button>
-                        </div>
+                                <!-- Mot de passe -->
+                                <div class="grid gap-2">
+                                    <label for="password" class="text-sm font-semibold">Mot de passe</label>
+                                    <input name="password" id="password{{ $user->id }}" type="password"
+                                        class="flex h-9 w-full rounded-md border border-gray-300 px-3 py-1 text-sm" />
+                                </div>
+
+                                <!-- Confirmation -->
+                                <div class="grid gap-2">
+                                    <label for="password_confirmation" class="text-sm font-semibold">Confirmer mot de
+                                        passe</label>
+                                    <input name="password_confirmation" type="password"
+                                        class="flex h-9 w-full rounded-md border border-gray-300 px-3 py-1 text-sm" />
+                                </div>
+
+                                <!-- Submit -->
+                                <button type="submit"
+                                    class="h-9 rounded-md bg-[#5e72e4] text-white px-4 py-2 text-sm hover:bg-[#5e72e4]/90">
+                                    Mettre à jour
+                                </button>
+                            </div>
                     </form>
                 </div>
             @endforeach

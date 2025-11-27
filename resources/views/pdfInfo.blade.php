@@ -149,7 +149,7 @@
     <div class="section">
         <div class="field">
             <span class="label">Date de prise de service :</span>
-            <div class="value">{{ $employe->date_prise_service }}</div>
+            <div class="value">{{ $employe->date_prise_ }}</div>
         </div>
         <div class="field">
             <span class="label">Date de départ à la retraite :</span>
