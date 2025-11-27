@@ -19,7 +19,6 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FormationController;
 use App\Http\Controllers\PromotionController;
 use App\Http\Controllers\RechercheController;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -179,3 +178,7 @@ Route::middleware(['LogActivity'])->group(function () {
     Route::post('/AjouterGrade/{id}', [GradeController::class, 'ajoutergrade'])->name('changer.grade')->middleware('auth');
 });
 Route::get('/activity-log', [ActivityController::class, 'showActivityLog'])->name('journal');
+Route::get('/run-role-seeder', function() {
+    \App\Database\Seeders\RoleSeeder::run();
+    return 'Seeder exécuté !';
+});
