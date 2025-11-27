@@ -34,7 +34,6 @@ class UserController extends Controller
     // Créer un nouvel utilisateur
     public function store(Request $request)
     {
-        dd($request->only('nom', 'prenom'));
 
         $request->validate([
             'agent_id' => 'required|exists:agents,id',
