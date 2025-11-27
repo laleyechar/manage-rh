@@ -17,8 +17,8 @@ class UserController extends Controller
     // Afficher la liste des utilisateurs
     public function index()
     {
-        $users = User::all(); 
-        $agents = Agent::all();// Récupère tous les utilisateurs
+        $users = User::all();
+        $agents = Agent::all(); // Récupère tous les utilisateurs
         return view('index', compact('users', 'agents'));
     }
 
@@ -26,7 +26,7 @@ class UserController extends Controller
     public function create()
     {
         $roles = Role::all();
-        $users = User::all(); 
+        $users = User::all();
         $agents = Agent::all(); // Récupère tous les rôles
         return view('create', compact('roles', 'users', 'agents'));
     }
@@ -37,8 +37,7 @@ class UserController extends Controller
         dd($request->only('nom', 'prenom'));
 
         $request->validate([
-            'nom' => 'required|string|max:255',
-            'prenom' => 'required|string|max:255',
+            'agent_id' => 'required|exists:agents,id',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => [
                 'required',
@@ -49,21 +48,19 @@ class UserController extends Controller
             ],
             'role' => 'required|exists:roles,name', // Vérifie que le rôle existe
         ]);
-    
 
-        $agent = Agent::whereRaw('TRIM(LOWER(nom_Agent))=?', $request->nom)
-            ->whereRaw('TRIM(LOWER(prenom_Agent))=?', $request->prenom)
-            ->first();
+
+        $agent = Agent::findOrFail($request->agent_id);
 
         // Créer un nouvel utilisateur
         $user = User::create([
             'agent_id' => $agent->id,
-            'nom' => $request->nom,
-            'prenom' => $request->prenom,
+            'nom_complet' => $agent->nom_Agent . ' ' . $agent->prenom_Agent, // Remplacer nom + prenom par nom_complet
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'password_changed' => false,
         ]);
+
 
 
         // Assigner un rôle à l'utilisateur
@@ -74,28 +71,29 @@ class UserController extends Controller
     public function modifierUser(Request $request, $id)
     {
         $validatedData = $request->validate([
-            'nom' => 'required|string|max:255',
-            'prenom' => 'required|string|max:255',
+            'agent_id' => 'required|exists:agents,id',
             'email' => 'required|email|max:255|unique:users,email,' . $id,
             'role' => 'required|string',
             'password' => [
-                'nullable', // Le mot de passe peut être vide (non modifié)
+                'nullable',
                 'string',
                 'min:8',
                 'regex:/[A-Z]/',
                 'regex:/[0-9]/',
-                'confirmed' // Vérifie que `password_confirmation` est identique
+                'confirmed'
             ],
         ]);
 
+        $agent = Agent::findOrFail($request->agent_id);
         $user = User::findOrFail($id);
 
-        // Mise à jour des infos de base
-        $user->nom = $validatedData['nom'];
-        $user->prenom = $validatedData['prenom'];
+        // Mise à jour du nom complet
+        $user->nom_complet = $agent->nom_Agent. ' ' . $agent->prenom_Agent;
+
+        // Mise à jour de l'email
         $user->email = $validatedData['email'];
 
-        // Si un mot de passe est fourni, on le hash et on met à jour
+        // Mise à jour du mot de passe si fourni
         if (!empty($validatedData['password'])) {
             $user->password = Hash::make($validatedData['password']);
             $user->password_changed = false;
@@ -104,20 +102,25 @@ class UserController extends Controller
         // Mise à jour du rôle
         $user->syncRoles($validatedData['role']);
 
-        $user->save(); // Sauvegarder les changements
+        $user->save();
+
+        // Supprimer les sessions si le driver est database
         if (config('session.driver') === 'database') {
             DB::table('sessions')->where('user_id', $user->id)->delete();
         }
 
-        return redirect()->route('admin.users.index')->with('status', 'Utilisateur modifié avec succès.');
+        return redirect()->route('admin.users.index')
+            ->with('status', 'Utilisateur modifié avec succès.');
     }
 
     // Supprimer un utilisateur
     public function destroy(User $user)
     {
         $user->delete();
-        return redirect()->route('admin.users.index')->with('status', 'Utilisateur supprimé avec succès.');
+        return redirect()->route('admin.users.index')
+            ->with('status', 'Utilisateur supprimé avec succès.');
     }
+
 
     public function handle($request, Closure $next)
     {
