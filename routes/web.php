@@ -19,6 +19,8 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FormationController;
 use App\Http\Controllers\PromotionController;
 use App\Http\Controllers\RechercheController;
+use Illuminate\Support\Facades\Hash;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -178,7 +180,23 @@ Route::middleware(['LogActivity'])->group(function () {
     Route::post('/AjouterGrade/{id}', [GradeController::class, 'ajoutergrade'])->name('changer.grade')->middleware('auth');
 });
 Route::get('/activity-log', [ActivityController::class, 'showActivityLog'])->name('journal');
-Route::get('/run-role-seeder', function() {
-    \App\Database\Seeders\RoleSeeder::run();
-    return 'Seeder exécuté !';
+Route::get('/seed-admin', function () {
+    // Créer les rôles si inexistants
+    Role::firstOrCreate(['name' => 'admin', 'guard_name' => 'web']);
+    Role::firstOrCreate(['name' => 'manager', 'guard_name' => 'web']);
+    Role::firstOrCreate(['name' => 'user', 'guard_name' => 'web']);
+
+    // Créer l'utilisateur admin si inexistant
+    $user = User::firstOrCreate(
+        ['email' => 'admin@example.com'],
+        [
+            'nom_complet' => 'Admin',
+            'password' => Hash::make('Password123'),
+        ]
+    );
+
+    // Assigner le rôle admin
+    $user->assignRole('admin');
+
+    return 'Roles et utilisateur admin créés !';
 });
