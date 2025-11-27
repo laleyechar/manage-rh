@@ -60,7 +60,6 @@ class AuthController extends Controller
                 'regex:/[0-9]/',
             ],
         ]);
-        dd($validated);
         $user = User::create([
             'nom_complet' => $validated['nom_complet'],
             'email' => $validated['email'],
