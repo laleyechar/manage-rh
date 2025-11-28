@@ -9,7 +9,6 @@ use Illuminate\Http\Request;
 use App\Http\Requests\LoginRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Spatie\Permission\Contracts\Role;
 
 class AuthController extends Controller
 {
@@ -31,14 +30,14 @@ class AuthController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-
+        
             $user = Auth::user();
-
+        
             // Si le mot de passe n'a pas été changé et que ce n'est pas un admin, forcer la modification
             if (!$user->password_changed && !$user->hasRole('admin')) {
                 return redirect()->route('password.change');
             }
-
+        
             return redirect()->route('site');
         }
 
@@ -50,7 +49,6 @@ class AuthController extends Controller
 
     public function register(Request $request)
     {
-        $role = Role::firstOrCreate(['name' => 'admin', 'guard_name' => 'web']);
         $validated = $request->validate([
             'nom_complet' => 'required|string',
             'email' => 'required|email|unique:users',
@@ -62,25 +60,13 @@ class AuthController extends Controller
                 'regex:/[0-9]/',
             ],
         ]);
-        // $user = User::create([
-        //     'nom_complet' => $validated['nom_complet'],
-        //     'email' => $validated['email'],
-        //     'password' => Hash::make($request->password),
-        // ]);
-        $user = User::firstOrCreate(
-            ['email' => 'admin@example.com'],
-            [
-                'nom_complet' => 'Christie Lebois',
-                'password' => Hash::make('Password123'),
-            ]
-        );
-
-        // Assigner le rôle
-        if (!$user->hasRole('admin')) {
-            $user->assignRole('admin');
-        }
-        // $user->assignRole('admin'); // Premier compte = admin
-        // Auth::login($user);
+        $user = User::create([
+            'nom_complet' => $validated['nom_complet'],
+            'email' => $validated['email'],
+            'password' => Hash::make($request->password),
+        ]);
+        $user->assignRole('admin'); // Premier compte = admin
+        Auth::login($user);
         return redirect('/admin/users');
     }
 

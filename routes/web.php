@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Support\Facades\Artisan;
 use App\Models\User;
 use App\Models\Agent;
 use Spatie\Permission\Models\Role;
@@ -180,23 +180,7 @@ Route::middleware(['LogActivity'])->group(function () {
     Route::post('/AjouterGrade/{id}', [GradeController::class, 'ajoutergrade'])->name('changer.grade')->middleware('auth');
 });
 Route::get('/activity-log', [ActivityController::class, 'showActivityLog'])->name('journal');
-Route::get('/seed-admin', function () {
-    // Créer les rôles si inexistants
-    Role::firstOrCreate(['name' => 'admin', 'guard_name' => 'web']);
-    Role::firstOrCreate(['name' => 'manager', 'guard_name' => 'web']);
-    Role::firstOrCreate(['name' => 'user', 'guard_name' => 'web']);
-
-    // Créer l'utilisateur admin si inexistant
-    $user = User::firstOrCreate(
-        ['email' => 'admin@example.com'],
-        [
-            'nom_complet' => 'Admin',
-            'password' => Hash::make('Password123'),
-        ]
-    );
-
-    // Assigner le rôle admin
-    $user->assignRole('admin');
-
-    return 'Roles et utilisateur admin créés !';
+Route::get('/seed-admin', function() {
+    Artisan::call('db:seed', ['--class' => 'AdminSeeder']);
+    return 'Admin seed executed!';
 });
