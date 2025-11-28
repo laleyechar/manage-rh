@@ -355,8 +355,7 @@
             <table class="w-full bg-white rounded-lg  shadow-lg divide-y divide-gray-200">
                 <thead class="font-bold text-sm">
                     <tr>
-                        <th class="px-3 py-3 text-left text-gray-500 uppercase tracking-wider">Nom</th>
-                        <th class="px-3 py-3 text-left text-gray-500 uppercase tracking-wider">Prenom</th>
+                        <th class="px-3 py-3 text-left text-gray-500 uppercase tracking-wider">Nom et prenom</th>
                         <th class="px-3 py-3 text-left text-gray-500 uppercase tracking-wider">Email</th>
                         <th class="px-3 py-3 text-left text-gray-500 uppercase tracking-wider">Rôle</th>
                         <th class="px-3 py-3 text-left text-gray-500 uppercase tracking-wider">Actions</th>
@@ -366,9 +365,7 @@
                     @foreach ($users as $user)
                         <tr>
                             <td class="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                {{ $user->nom }}</td>
-                            <td class="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                {{ $user->prenom }}</td>
+                                {{ $user->nom_complet }}</td>
                             <td class="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                 {{ $user->email }}</td>
                             <td class="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
